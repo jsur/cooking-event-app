@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 //External middleware
-const logger = require('morgan');
+const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 //Routes
@@ -20,7 +20,7 @@ app.set('view engine', 'pug');
 
 // Logging
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), {flags: 'a'})
-app.use(logger('dev', {stream: accessLogStream}));
+app.use(morgan('dev', {stream: accessLogStream}));
 
 //Passport auth handling
 
