@@ -1,3 +1,3 @@
 Templates with Pug  
-One route that requires all controllers  
+All routes in one index.js which requires all controllers  
 Passport for auth  
