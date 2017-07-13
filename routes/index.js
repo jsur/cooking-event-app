@@ -7,6 +7,7 @@ const authController = require('../controllers/authController');
 // ES6 Object destructuring
 const {catchErrors} = require('../handlers/errorHandlers');
 
+// Wrap function calls in route in catchErrors if async await is used in them
 router.get('/', catchErrors(exampleController.getExamplePage));
 router.get('/signup', exampleController.getSignUpForm);
 

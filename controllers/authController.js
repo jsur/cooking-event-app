@@ -2,7 +2,8 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 const User = require('../models/User');
 
-exports.makeNewUser = async (req, res) => {
+// No need to add error handling, route is wrapped with catchErrors() in index.js
+exports.makeNewUser = async (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
 
