@@ -187,7 +187,6 @@
           "single"
       ],
       "radix": "error",
-      "require-jsdoc": "error",
       "rest-spread-spacing": "error",
       "semi": "error",
       "semi-spacing": "error",

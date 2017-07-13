@@ -1,23 +1,24 @@
+// Express
 const express = require('express');
 const app = express();
 // Node internal modules
 const path = require('path');
 const fs = require('fs');
-// External middleware
+//  Middleware
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
+// Get content from .env file
 require('dotenv').config({'path': '.env'});
 // Routes
 const routes = require('./routes/index');
 // Database
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/project2');
+mongoose.connect(process.env.MONGODB_URI);
 // Handlers
 const errorHandlers = require('./handlers/errorHandlers');
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
