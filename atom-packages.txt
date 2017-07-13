@@ -1,0 +1,2 @@
+linter-eslint
+atom-jade

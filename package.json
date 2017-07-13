@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "start-dev": "nodemon ./bin/www"
+    "start-dev": "nodemon ./bin/www",
+    "atom-install": "apm install --packages-file atom-packages.txt"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
@@ -18,5 +19,8 @@
     "passport-local": "^1.0.0",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0"
   }
 }
