@@ -1,7 +1,11 @@
-form(action="/signup" method="POST")
-  h2 Sign up
-  label(for="username") Username
-  input(type="text" name="username" placeholder="User name" required)
-  label(for="password") Password
-  input(type="password" name="password" placeholder="Password")
-  button Create account
+extends layout
+
+block content
+  form(action="/signup" method="POST")
+    h1= title
+    h2 Sign up
+    label(for="username") Username
+    input(type="text" name="username" placeholder="User name" required)
+    label(for="password") Password
+    input(type="password" name="password" placeholder="Password")
+    button Create account

@@ -3,7 +3,6 @@ extends layout
 block content
   h1= title
   p Example pug usage: #{ptag}
-  a(href="/signup") Make new user
   h2(class="header-h2") All users
     each user in users
       p(class="username-p")= user.username

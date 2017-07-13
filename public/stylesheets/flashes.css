@@ -10,6 +10,7 @@
   animation: slideIn forwards .1s ease-in-out 2;
   animation-timing-function: cubic-bezier(0.01, 1.68, 0.58, 1);
   animation-delay: 0.55s;
+  margin: 0 10%;
 }
 
 .flash__text {
