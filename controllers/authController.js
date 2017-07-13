@@ -6,7 +6,7 @@ exports.makeNewUser = async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  const salt     = await bcrypt.genSalt(bcryptSalt);
+  const salt = await bcrypt.genSalt(bcryptSalt);
   const hashPass = await bcrypt.hash(password, salt);
 
   const newUser = User({
@@ -14,11 +14,7 @@ exports.makeNewUser = async (req, res) => {
     password
   });
 
-  newUser.save((err) => {
-  if (err) {
-    res.render("signup");
-  } else {
-  res.redirect("/");
-  }
-  });
-}
+  const user = await newUser.save();
+  req.flash('success', `User ${user.username} created!`);
+  res.redirect('/');
+};

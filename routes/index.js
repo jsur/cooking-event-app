@@ -4,10 +4,12 @@ const router = express.Router();
 // This way we can keep related functionalities in their own controllers
 const exampleController = require('../controllers/exampleController');
 const authController = require('../controllers/authController');
+// ES6 Object destructuring
+const {catchErrors} = require('../handlers/errorHandlers');
 
-router.get('/', exampleController.getExamplePage);
+router.get('/', catchErrors(exampleController.getExamplePage));
 router.get('/signup', exampleController.getSignUpForm);
 
-router.post('/signup', authController.makeNewUser);
+router.post('/signup', catchErrors(authController.makeNewUser));
 
 module.exports = router;
