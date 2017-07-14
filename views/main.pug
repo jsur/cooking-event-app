@@ -1,13 +1,12 @@
 extends layout
 
 block content
-  main(class="container")
-    div(class="row")
-      div(class="six columns")
-        h1= title
-        p Example pug usage: #{ptag}
-      div(class="six columns")
-        h2(class="header-h2") All users
-    
-          each user in users
-            p(class="username-p")= user.username
+  section.frontpage-section-1
+    h1 MAIN SECTION
+  main.container
+    .row
+      .six.columns
+        h2 Event cards here
+      .six.columns
+        h2 Event cards here
+        

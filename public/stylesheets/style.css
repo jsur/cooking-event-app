@@ -30,6 +30,11 @@ nav li {
 }
 
 .columns {
-  height: 200px;
-  border: 1px solid red;
+  word-wrap: break-word;
+}
+
+.frontpage-section-1 {
+  height: 50vh;
+  border-bottom: 1px solid black;
+  text-align: center;
 }

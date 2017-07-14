@@ -2,8 +2,8 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/css/normalize.css')
-    link(rel='stylesheet', href='/stylesheets/css/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton/skeleton.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/flashes.css')
   body
@@ -13,6 +13,10 @@ html
           a(href="/") Main
         li
           a(href="/signup") Signup
+        li
+          a(href="/login") Login
+        li
+          a(href="/search") All events
     if locals.flashes
       .inner
         .flash-messages
