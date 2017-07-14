@@ -5,5 +5,10 @@ const Event = require('../models/Event');
 exports.getMainPage = async (req, res, next) => {
   // Await that Event.find is ready, then render
   const events = await Event.find().limit(6);
-  res.render('main', { events });
+  if (events.length > 0) {
+    res.render('main', { events });
+  } else {
+    res.render('main');
+  }
+
 };

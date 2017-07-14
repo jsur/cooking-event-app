@@ -11,6 +11,7 @@ block content
   main.container
     .row
       .twelve.columns.eventcard-container
-        each event in events
-          +eventCard(event)
+        if events.length > 0
+          each event in events
+            +eventCard(event)
         
