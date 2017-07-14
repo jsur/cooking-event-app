@@ -13,8 +13,9 @@ html
           a(href="/") Main
         li
           a(href="/signup") Signup
-        li
-          a(href="/login") Login
+        if !locals.isUserLoggedIn
+          li
+            a(href="/login") Login
         li
           a(href="/search") All events
     if locals.flashes
@@ -27,3 +28,12 @@ html
                 p.flash__text!= message
                 button.flash__remove(onClick="this.parentElement.remove()") &times;
     block content
+    footer.footer
+      .container
+        .row
+          .four.columns.footer-col
+            p Some content
+          .four.columns.footer-col
+            p More content
+          .four.columns.footer-col
+            p Even more

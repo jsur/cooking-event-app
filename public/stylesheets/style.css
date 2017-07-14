@@ -38,3 +38,14 @@ nav li {
   border-bottom: 1px solid black;
   text-align: center;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+.footer-col {
+  text-align: center;
+}
