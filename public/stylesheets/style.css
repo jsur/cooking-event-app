@@ -28,3 +28,8 @@ nav li {
 .username-p {
   color: green;
 }
+
+.columns {
+  height: 200px;
+  border: 1px solid red;
+}

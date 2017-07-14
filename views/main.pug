@@ -1,8 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Example pug usage: #{ptag}
-  h2(class="header-h2") All users
-    each user in users
-      p(class="username-p")= user.username
+  main(class="container")
+    div(class="row")
+      div(class="six columns")
+        h1= title
+        p Example pug usage: #{ptag}
+      div(class="six columns")
+        h2(class="header-h2") All users
+    
+          each user in users
+            p(class="username-p")= user.username
