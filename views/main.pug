@@ -1,5 +1,7 @@
 extends layout
 
+include mixins/eventCard
+
 block content
   section.frontpage-section-1
     h1 Generic Cooking App Name
@@ -7,8 +9,7 @@ block content
     p Other details
   main.container
     .row
-      .six.columns
-        h2 Event cards here
-      .six.columns
-        h2 Event cards here
+      .twelve.columns.eventcard-container
+        each event in events
+          +eventCard(event)
         

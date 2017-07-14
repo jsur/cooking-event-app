@@ -8,7 +8,7 @@ const authController = require('../controllers/authController');
 const {catchErrors} = require('../handlers/errorHandlers');
 
 // Wrap function calls in route in catchErrors if async await is used in them
-router.get('/', catchErrors(eventController.getExamplePage));
+router.get('/', catchErrors(eventController.getMainPage));
 router.get('/signup', eventController.getSignUpForm);
 
 router.post('/signup', catchErrors(authController.makeNewUser));
