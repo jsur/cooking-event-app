@@ -6,7 +6,7 @@
     "node": ">= 7.6.0"
   },
   "scripts": {
-    "start": "npm run seeds && node ./bin/www",
+    "start": "node ./bin/www",
     "start-dev": "nodemon ./bin/www",
     "atom-install": "apm install --packages-file atom-packages.txt",
     "seeds": "node ./bin/seeds.js"
