@@ -12,12 +12,10 @@ html
         li
           a(href="/") Main
         li
-          a(href="/signup") Signup
+          a(href="/search") All events
         if !locals.isUserLoggedIn
           li
             a(href="/login") Login
-        li
-          a(href="/search") All events
     if locals.flashes
       .flash-messages
         - const categories = Object.keys(locals.flashes)

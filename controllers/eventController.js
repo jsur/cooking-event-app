@@ -7,7 +7,3 @@ exports.getMainPage = async (req, res, next) => {
   const events = await Event.find().limit(6);
   res.render('main', { events });
 };
-
-exports.getSignUpForm = (req, res, next) => {
-  res.render('signup');
-};

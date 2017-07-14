@@ -19,3 +19,7 @@ exports.makeNewUser = async (req, res, next) => {
   req.flash('success', `User ${user.email} created!`);
   res.redirect('/');
 };
+
+exports.getLoginForm = (req, res, next) => {
+  res.render('login');
+};

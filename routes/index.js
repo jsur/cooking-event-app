@@ -9,8 +9,8 @@ const {catchErrors} = require('../handlers/errorHandlers');
 
 // Wrap function calls in route in catchErrors if async await is used in them
 router.get('/', catchErrors(eventController.getMainPage));
-router.get('/signup', eventController.getSignUpForm);
 
-router.post('/signup', catchErrors(authController.makeNewUser));
+router.get('/login', authController.getLoginForm);
+router.post('/login', catchErrors(authController.makeNewUser));
 
 module.exports = router;

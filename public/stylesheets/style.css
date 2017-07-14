@@ -19,6 +19,11 @@ nav {
 nav li {
   display: inline;
   margin: 20px;
+  float: left;
+}
+
+nav li:last-of-type {
+  float: right;
 }
 
 .header-h2 {
@@ -60,7 +65,15 @@ nav li {
   padding: 10px;
 }
 
+.button-login,
+.button-signup {
+  display: block;
+}
+
 .footer {
+  background-color: black;
+  color: white;
+  height: 70px;
   bottom: 0;
   width: 100%;
   border-top: 1px solid black;

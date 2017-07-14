@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .container
+    .row
+      .six.columns
+        form(action="/login" method="POST")
+          h2 Log in
+          label(for="email") Email
+          input(type="text" name="email" placeholder="Email" required)
+          label(for="password") Password
+          input(type="password" name="password" placeholder="Password" required)
+          button.button-primary.button-login Login
+      .six.columns
+        form(action="/signup" method="POST")
+          h2 Sign up
+          label(for="email") Email*
+          input(type="text" name="email" placeholder="Email" required)
+          label(for="password") Password*
+          input(type="password" name="password" placeholder="Password" required)
+          label(for="passwordconfirm") Confirm password
+          input(type="password" name="passwordconfirm" placeholder="Confirm password" required)
+          label(for="firstname") First name
+          input(type="text" name="firstname" placeholder="First name")
+          label(for="lastname") Last name
+          input(type="text" name="lastname" placeholder="Last name")
+          button.button-primary.button-signup Create account
