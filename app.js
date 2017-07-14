@@ -46,9 +46,16 @@ app.use(session({
 // Flash messages
 app.use(flash());
 
-// Make flash useable in Pug templates
+// Make things available in Pug templates and routes:
+//  Flash
+//  isUserLoggedIn
 app.use((req, res, next) => {
   res.locals.flashes = req.flash();
+  if (req.session.currentUser) {
+    res.locals.isUserLoggedIn = true;
+  } else {
+    res.locals.isUserLoggedIn = false;
+  }
   next();
 });
 
