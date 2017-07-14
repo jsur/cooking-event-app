@@ -1,5 +1,6 @@
 mixin eventCard(event = {})
   .eventcard
-    p= event.title
-    p= event.foodtype
-    p= event.price
+    p Name: #{event.title}
+    p Food type: #{event.foodtype}
+    p Price: #{event.price}
+    a(href='/event/'+event._id) Event details
