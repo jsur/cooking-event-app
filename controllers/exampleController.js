@@ -5,7 +5,7 @@ exports.getExamplePage = async (req, res, next) => {
 
   // Await that User.find is ready, then render
   const users = await User.find();
-  res.render('index', {
+  res.render('main', {
     'title': 'This main page is rendered in exampleController',
     'ptag': 'In this sentence we send info to p tag from the controller and pug uses #{ptag} to show our data',
     users

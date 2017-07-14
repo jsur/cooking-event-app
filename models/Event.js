@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
-  'owner': [Schema.Types.ObjectId],
+  'owner': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
   'title': String,
   'foodtype': [String],
   'price': Number,
@@ -15,7 +15,7 @@ const eventSchema = new Schema({
     'type': String,
     'coordinates': [Number]
   },
-  'attendees': [Schema.Types.ObjectId],
+  'attendees': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
   'image': {
     'name': String,
     'path': String

@@ -1,2 +1,2 @@
 linter-eslint
-atom-jade
+language-pug

@@ -7,8 +7,8 @@ const userSchema = new Schema({
     'type': Number,
     'required': 'Password is required!'
   },
-  'events_attending': [Schema.Types.ObjectId],
-  'events_hosting': [Schema.Types.ObjectId],
+  'events_attending': [{'type': Schema.Types.ObjectId, 'ref': 'Event'}],
+  'events_hosting': [{'type': Schema.Types.ObjectId, 'ref': 'Event'}],
   'preferences': [String]
 }, {
   'timestamps': {
