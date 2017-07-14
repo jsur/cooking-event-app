@@ -71,7 +71,6 @@
           "error",
           "unix"
       ],
-      "lines-around-comment": "error",
       "lines-around-directive": "error",
       "max-depth": "error",
       "max-lines": "error",
@@ -142,7 +141,6 @@
       "no-shadow": "error",
       "no-shadow-restricted-names": "error",
       "no-spaced-func": "error",
-      "no-sync": "error",
       "no-tabs": "error",
       "no-template-curly-in-string": "error",
       "no-throw-literal": "error",
@@ -167,7 +165,6 @@
       "no-whitespace-before-property": "error",
       "no-with": "error",
       "object-curly-newline": "error",
-      "object-shorthand": "error",
       "one-var-declaration-per-line": "error",
       "operator-assignment": "error",
       "operator-linebreak": "error",

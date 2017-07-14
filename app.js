@@ -10,6 +10,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
 // Get content from .env file
 require('dotenv').config({'path': '.env'});
 // Routes
@@ -19,6 +22,53 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 // Handlers
 const errorHandlers = require('./handlers/errorHandlers');
+const User = require('./models/User');
+
+app.use(session({
+  'secret': process.env.SECRET,
+  'resave': false,
+  'saveUninitialized': false
+}));
+
+// Passport auth handling
+
+// serialize sessions
+passport.serializeUser((user, next) => {
+  console.log('serialize', user);
+  next(null, user.id);
+});
+
+passport.deserializeUser((id, next) => {
+  User.findOne({ '_id': id }, (err, user) => {
+    next(err, user);
+  });
+});
+
+// use local strategy
+passport.use(new LocalStrategy({
+  'usernameField': 'email',
+  'passwordField': 'password'
+}, (email, password, next) => {
+  console.log('LocalStrategy', email, password);
+  User.findOne({ email }, (err, user) => {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return next(null, false, { 'message': 'Unknown user' });
+    }
+    /*
+    if (!bcrypt.compareSync(password, user.password)) {
+      return next(null, false, { 'message': 'Invalid password' });
+    }*/
+
+    return next(null, user);
+  });
+})
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,14 +83,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended': false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(session({
-  'secret': process.env.SECRET,
-  'resave': false,
-  'saveUninitialized': false
-}));
-
-// Passport auth handling
 
 
 // Flash messages

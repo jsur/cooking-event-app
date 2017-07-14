@@ -16,6 +16,9 @@ html
         if !locals.isUserLoggedIn
           li
             a(href="/login") Login
+        if locals.isUserLoggedIn
+          li
+            a(href="/logout") Logout
     if locals.flashes
       .flash-messages
         - const categories = Object.keys(locals.flashes)
