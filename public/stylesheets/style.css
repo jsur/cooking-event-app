@@ -4,11 +4,11 @@ body {
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
-  color: #00B7FF;
+
 }
 
 nav {
@@ -53,7 +53,6 @@ nav li:last-of-type {
   flex-wrap: wrap;
   flex-direction: row;
   margin-top: 3rem;
-  margin-bottom: 3rem;
 }
 
 .eventcard {
@@ -70,10 +69,24 @@ nav li:last-of-type {
   margin: 0;
 }
 
-.googlemap {
-  width: 100%;
+.search-container {
   height: 100vh;
+}
+
+.map {
   border: 1px solid red;
+  margin: 0;
+}
+
+.googlemap {
+  border: 1px solid blue;
+  width: 100%;
+  height: 100%;
+}
+
+.eventcard-container.map-page {
+  border: 1px solid green;
+  margin: 0;
 }
 
 
@@ -94,3 +107,37 @@ nav li:last-of-type {
 .footer-col {
   text-align: center;
 }
+
+
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+
+  .search-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .map {
+    width: 60%;
+  }
+  .eventcard-container.map-page {
+    width: 40%;
+  }
+
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
