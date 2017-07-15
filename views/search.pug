@@ -1,0 +1,14 @@
+extends layout
+
+include mixins/eventCard
+
+block content
+  .container.map-page
+    .row.map-page
+      .nine.columns.map
+        h2 Google map goes here
+        canvas.googlemap
+      .three.columns.eventcard-container
+        if events
+          each event in events
+            +eventCard(event)

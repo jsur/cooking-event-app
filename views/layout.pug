@@ -13,10 +13,13 @@ html
           a(href="/") Main
         li
           a(href="/search") All events
-        if !locals.isUserLoggedIn
+        if isUserLoggedIn
+          li
+            a(href="/dashboard") My dashboard
+        if !isUserLoggedIn
           li
             a(href="/login") Login
-        if locals.isUserLoggedIn
+        if isUserLoggedIn
           li
             a(href="/logout") Logout
     if locals.flashes

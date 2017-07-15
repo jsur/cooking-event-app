@@ -63,7 +63,19 @@ nav li:last-of-type {
   height: 150px;
   margin: 3rem;
   padding: 10px;
+  box-sizing: border-box;
 }
+
+.eventcard p {
+  margin: 0;
+}
+
+.googlemap {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+}
+
 
 .button-login,
 .button-signup {
