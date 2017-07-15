@@ -34,7 +34,6 @@ app.use(session({
 
 // serialize sessions
 passport.serializeUser((user, next) => {
-  console.log('serialize', user);
   next(null, user.id);
 });
 
@@ -49,7 +48,6 @@ passport.use(new LocalStrategy({
   'usernameField': 'email',
   'passwordField': 'password'
 }, (email, password, next) => {
-  console.log('LocalStrategy', email, password);
   User.findOne({ email }, (err, user) => {
     if (err) {
       return next(err);
@@ -95,7 +93,7 @@ app.use(flash());
 //  isUserLoggedIn
 app.use((req, res, next) => {
   res.locals.flashes = req.flash();
-  if (req.session.currentUser) {
+  if (req.user) {
     res.locals.isUserLoggedIn = true;
   } else {
     res.locals.isUserLoggedIn = false;
