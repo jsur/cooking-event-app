@@ -12,16 +12,15 @@ html
         li
           a(href="/") Main
         li
-          a(href="/search") All events
+          a(href="/search") Events
         if isUserLoggedIn
           li
-            a(href="/dashboard") My dashboard
+            a(href="/dashboard") Dashboard
+          li
+            a(href="/logout") Logout
         if !isUserLoggedIn
           li
             a(href="/login") Login
-        if isUserLoggedIn
-          li
-            a(href="/logout") Logout
     if locals.flashes
       .flash-messages
         - const categories = Object.keys(locals.flashes)
