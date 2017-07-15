@@ -75,8 +75,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // Logging
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), {'flags': 'a'});
-app.use(morgan('dev', {'stream': accessLogStream}));
+if (process.env.NODE_ENV === 'development') {
+  const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), {'flags': 'a'});
+  app.use(morgan('dev', {'stream': accessLogStream}));
+}
 
 // Middleware
 app.use(bodyParser.json());
