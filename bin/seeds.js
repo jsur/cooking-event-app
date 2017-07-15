@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/cooking-app');
 
-const User = require('../models/user');
+const User = require('../models/User');
+const Event = require('../models/Event');
 
 const users = [
   {
@@ -47,9 +48,6 @@ const users = [
     'lastname': 'Davis'
   }
 ];
-
-
-const Event = require('../models/event');
 
 const events = [
   {
