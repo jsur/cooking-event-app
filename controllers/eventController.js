@@ -39,8 +39,8 @@ exports.getEventsNearCoordinate = async (req, res, next) => {
           // mongoose wants lng first
           'coordinates': [req.query.lng, req.query.lat]
         },
-        // 20 000 km
-        '$maxDistance': 20000000
+        // 20 km
+        '$maxDistance': 20000
       }
     }
   }).select('name title description location price foodtype');
