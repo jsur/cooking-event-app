@@ -78,7 +78,7 @@ nav li:last-of-type {
   margin: 0;
 }
 
-.googlemap {
+#googlemap {
   border: 1px solid red;
   width: 100%;
   height: 100%;
