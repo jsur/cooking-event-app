@@ -26,4 +26,26 @@ exports.getDashboard = async (req, res, next) => {
   //   e
   // }
   res.render('dashboard', { events });
+
+};
+
+
+exports.getEventsNearCoordinate = async (req, res, next) => {
+
+  const events = await Event.find({
+    'location': {
+      '$near': {
+        '$geometry': {
+          'type': 'Point',
+          // mongoose wants lng first
+          'coordinates': [req.query.lng, req.query.lat]
+        },
+        // 5km
+        '$maxDistance': 5000
+      }
+    }
+  }).select('name title description');
+
+  res.json(events);
+
 };

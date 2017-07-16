@@ -11,10 +11,7 @@ const eventSchema = new Schema({
     'type': Date,
     'default': Date.now
   },
-  'location': {
-    'type': String,
-    'coordinates': [Number]
-  },
+  'location': { 'type': { 'type': String }, 'coordinates': [Number] },
   'attendees': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
   'image': {
     'name': String,
@@ -26,6 +23,8 @@ const eventSchema = new Schema({
     'updatedAt': 'updated_at'
   }
 });
+
+eventSchema.index({ 'location': '2dsphere' });
 
 const Event = mongoose.model('Event', eventSchema);
 
