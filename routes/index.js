@@ -30,4 +30,8 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
+// API routes
+
+router.get('/api/events/near', catchErrors(eventController.getEventsNearCoordinate));
+
 module.exports = router;
