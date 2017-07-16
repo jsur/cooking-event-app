@@ -13,11 +13,10 @@ function loadPlaces (map, lat, lng) {
     lng = mapOptions.center.lng;
   }
 
-  console.log(lat, lng);
-
   axios.get(`/api/events/near?lat=${lat}&lng=${lng}`)
     .then((response) => {
       const events = response.data;
+      renderEvents(events);
       if (!events.length) {
         console.log('No places found.');
 
@@ -37,6 +36,32 @@ function loadPlaces (map, lat, lng) {
     .catch((error) => {
       console.log(error);
     });
+}
+
+function renderEvents (events) {
+  const eventsContainer = $('#mapevents');
+  // first clear events
+  eventsContainer.html('');
+
+  if (events.length === 0) {
+    $(eventsContainer).append(`
+      <div class="eventcard">
+        <p>No events here!</p>
+      </div>
+    `);
+  }
+
+  events.forEach((event) => {
+
+    $(eventsContainer).append(`
+      <div class="eventcard">
+        <p>Name: ${event.title}</p>
+        <p>Food type: ${event.foodtype}</p>
+        <p>Price: ${event.price}</p>
+        <a href='/event/${event._id}'>Event details</a>
+      </div>
+    `);
+  });
 }
 
 function makeMap (element) {

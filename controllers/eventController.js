@@ -11,8 +11,7 @@ exports.getMainPage = async (req, res, next) => {
 
 exports.getSearchPage = async (req, res, next) => {
   // Await that Event.find is ready, then render
-  const events = await Event.find().limit(6);
-  res.render('search', { events });
+  res.render('search');
 };
 
 exports.getDashboard = async (req, res, next) => {
@@ -40,11 +39,11 @@ exports.getEventsNearCoordinate = async (req, res, next) => {
           // mongoose wants lng first
           'coordinates': [req.query.lng, req.query.lat]
         },
-        // 20 km
-        '$maxDistance': 20000
+        // 20 000 km
+        '$maxDistance': 20000000
       }
     }
-  }).select('name title description location');
+  }).select('name title description location price foodtype');
 
   res.json(events);
 
