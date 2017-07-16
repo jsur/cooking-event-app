@@ -87,6 +87,7 @@ nav li:last-of-type {
 .eventcard-container.map-page {
   border: 1px solid green;
   margin: 0;
+  overflow-y: auto;
 }
 
 
