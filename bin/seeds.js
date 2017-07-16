@@ -158,6 +158,30 @@ const events = [
       'coordinates': [2.1658517, 41.3787784]
     },
     'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+  },
+  {
+    'owner': ['5968cb361ef39b7f80931bda'],
+    'title': 'Restaurant in Cairo, Egypt',
+    'foodtype': ['Egyptian'],
+    'price': 100,
+    'description': 'Cairo Cairo Cairo Cairo Cairo Cairo Cairo ',
+    'location': {
+      'type': 'Point',
+      'coordinates': [31.340002, 30.044281]
+    },
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+  },
+  {
+    'owner': ['5968cb361ef39b7f80931bda'],
+    'title': 'Madrid Eatz',
+    'foodtype': ['Spanish'],
+    'price': 100,
+    'description': 'Madrid Madrid Madrid Madrid Madrid Madrid Madrid Madrid Madrid Madrid ',
+    'location': {
+      'type': 'Point',
+      'coordinates': [-3.707398, 40.415363]
+    },
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
   }
 ];
 
