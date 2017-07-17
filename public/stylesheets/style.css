@@ -120,6 +120,16 @@ nav li:last-of-type {
   margin-top: 10px;
 }
 
+.button-cancel {
+  background: #ed4b4b;
+  color: black;
+  margin-top: 10px;
+}
+
+.attending-notice {
+  color: #1fdd67;
+}
+
 .footer {
   background-color: black;
   color: white;
