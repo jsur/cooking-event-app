@@ -7,7 +7,6 @@ const moment = require('moment');
 exports.getMainPage = async (req, res, next) => {
   // Await that Event.find is ready, then render
   const events = await Event.find().limit(6);
-  console.log(events);
   res.render('main', { events });
 };
 
@@ -18,17 +17,16 @@ exports.getSearchPage = async (req, res, next) => {
 
 exports.getDashboard = async (req, res, next) => {
   // Await that Event.find is ready, then render
-  console.log(req.user.email);
+  const attendedEvents = await Event.find({ 'attendees': req.user.id }).limit(3);
+  const hostedEvents = await Event.find({ 'owner': req.user.id }).limit(3);
   // const events = await Event.find({ 'attendees': req.user.id });
-  // console.log(Event.find({ 'attendees': req.user.id }));
   // if (events.length > 0) {
   //   events.limit(3);
   // }
   // else {
   //   e
   // }
-  res.render('dashboard');
-
+  res.render('dashboard', { attendedEvents, hostedEvents });
 };
 
 

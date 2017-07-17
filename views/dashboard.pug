@@ -1,11 +1,19 @@
 extends layout
 
+include mixins/eventCard
+
 block content
   .container
     .row
       .six.columns
           h2 Attended events
+          if attendedEvents
+            each event in attendedEvents
+              +eventCard(event)
           button.button-primary.button-login Browse events
       .six.columns
           h2 Hosted events
+          if hostedEvents
+            each event in hostedEvents
+              +eventCard(event)
           button.button-primary.button-signup Create a new event
