@@ -23,6 +23,8 @@ mongoose.connect(process.env.MONGODB_URI);
 // Handlers
 const errorHandlers = require('./handlers/errorHandlers');
 const User = require('./models/User');
+// Helpers
+const helpers = require('./helpers');
 
 app.use(session({
   'secret': process.env.SECRET,
@@ -98,6 +100,7 @@ app.use((req, res, next) => {
   } else {
     res.locals.isUserLoggedIn = false;
   }
+  res.locals.helpers = helpers;
   next();
 });
 
