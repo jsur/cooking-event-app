@@ -25,15 +25,14 @@ mongoose.connect(process.env.MONGODB_URI);
 const errorHandlers = require('./handlers/errorHandlers');
 const User = require('./models/User');
 const Event = require('./models/Event');
-// const Picture = require('../models/pictures');
+// const Picture = require('./models/pictures');
 // Helpers
 const helpers = require('./helpers');
 
 app.use(session({
   'secret': process.env.SECRET,
   'resave': false,
-  'saveUninitialized': false,
-  'cookie': { 'maxAge': 600000 }
+  'saveUninitialized': false
 }));
 
 // Passport auth handling
