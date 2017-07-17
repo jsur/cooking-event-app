@@ -81,10 +81,20 @@ nav li:last-of-type {
   overflow-y: auto;
 }
 
-
 .button-login,
 .button-signup {
   display: block;
+}
+
+.eventimg {
+  width: 280px;
+  height: 280px;
+  border: 1px solid black;
+}
+
+.button-attending {
+  background: #1fdd67;
+  color: black;
 }
 
 .footer {
@@ -130,7 +140,10 @@ nav li:last-of-type {
   .eventcard-container.map-page {
     width: 40%;
   }
-
+  .eventimg {
+    width: 500px;
+    height: 500px;
+  }
 }
 
 /* Larger than desktop */

@@ -1,5 +1,6 @@
 const Event = require('../models/Event');
 const User = require('../models/User');
+const moment = require('moment');
 
 // With exports.something we don't need to use module.exports in the
 // end of the file
@@ -49,4 +50,13 @@ exports.getEventsNearCoordinate = async (req, res, next) => {
 
   res.json(events);
 
+};
+
+exports.getEventWithId = async (req, res, next) => {
+
+  const eventId = req.params.id;
+  const event = await Event.findById(eventId);
+  const date = moment(event.date).format('LLL');
+
+  res.render('event', { event, date });
 };

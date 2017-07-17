@@ -15,6 +15,8 @@ router.get('/dashboard', catchErrors(eventController.getDashboard));
 
 router.get('/login', authController.getLoginForm);
 
+router.get('/event/:id', catchErrors(eventController.getEventWithId));
+
 router.post('/signup', catchErrors(authController.makeNewUser));
 
 router.post('/login', passport.authenticate('local', {

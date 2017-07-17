@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .container
+    h2= event.title
+    .row.event-row
+      .nine.columns
+        img.eventimg
+      .three.columns.attendevent
+        aside.eventdetails
+          h3= event.title
+          p= date
+          p= event.description
+          form(action='/event/'+event._id method='POST')
+            button.button-attending I'm attending!
+      .twelve.columns
+        h2 static map
+        
