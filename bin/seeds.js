@@ -61,10 +61,10 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1645279, 41.3902667]
     },
-    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f']
+    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735d', '5968cad1a172577f721e735f']
   },
   {
-    'owner': ['5968cb361ef39b7f80931bda'],
+    'owner': ['5968cad1a172577f721e735d'],
     'title': 'Club Lola',
     'foodtype': ['International'],
     'price': 35,
@@ -88,7 +88,7 @@ const events = [
     'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e7362']
   },
   {
-    'owner': ['5968cb361ef39b7f80931bda'],
+    'owner': ['5968cad1a172577f721e735d'],
     'title': 'Garden Party',
     'foodtype': ['Mediterranean'],
     'price': 35,
@@ -145,7 +145,7 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1893282, 41.3930448]
     },
-    'attendees': ['5968cad1a172577f721e7360', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f']
+    'attendees': ['5968cad1a172577f721e735d', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f']
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -157,7 +157,7 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1658517, 41.3787784]
     },
-    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e735d']
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
