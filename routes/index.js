@@ -10,18 +10,15 @@ const {catchErrors} = require('../handlers/errorHandlers');
 
 // Wrap function calls in route in catchErrors if async await is used in them
 router.get('/', catchErrors(eventController.getMainPage));
+
 router.get('/search', catchErrors(eventController.getSearchPage));
+
 router.get('/dashboard', authController.checkAuth, catchErrors(eventController.getDashboard));
+
 router.get('/newevent', authController.checkAuth, catchErrors(eventController.getNewEventPage));
-
-router.get('/login', authController.getLoginForm);
-
-router.get('/event/:id', catchErrors(eventController.getEventWithId));
-
-router.post('/signup', authController.validateSignUpInfo, catchErrors(authController.makeNewUser));
-
 router.post('/newevent', authController.checkAuth, catchErrors(authController.makeNewEvent));
 
+router.get('/login', authController.getLoginForm);
 router.post('/login', passport.authenticate('local', {
   'successRedirect': '/',
   'successFlash': 'Successful login!',
@@ -29,6 +26,11 @@ router.post('/login', passport.authenticate('local', {
   'failureFlash': true,
   'passReqToCallback': true
 }));
+
+router.get('/event/:id', catchErrors(eventController.getEventWithId));
+router.post('/event/:id', authController.checkAuth);
+
+router.post('/signup', authController.validateSignUpInfo, catchErrors(authController.makeNewUser));
 
 router.get('/logout', (req, res) => {
   req.logout();
