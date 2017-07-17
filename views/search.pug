@@ -6,7 +6,4 @@ block content
   .search-container
     .map
       #googlemap
-    .eventcard-container.map-page
-      if events
-        each event in events
-          +eventCard(event)
+    #mapevents.eventcard-container.map-page

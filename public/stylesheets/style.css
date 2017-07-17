@@ -3,14 +3,6 @@ body {
   margin: 0;
 }
 
-body {
-
-}
-
-a {
-
-}
-
 nav {
   border-bottom: 1px solid black;
   height: 100px;
@@ -76,6 +68,7 @@ nav li:last-of-type {
 
 .map {
   margin: 0;
+  height: 60vh;
 }
 
 #googlemap {
@@ -119,7 +112,9 @@ nav li:last-of-type {
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-
+  .map {
+    height: 100vh;
+  }
 }
 
 /* Larger than tablet */
