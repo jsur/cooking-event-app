@@ -4,16 +4,14 @@ block content
   .container
     .row
       .six.columns
-        form(action="/signup" method="POST")
+        form(action="/newevent" method="POST")
           h2 New Event
-          label(for="email") Email*
-          input(type="text" name="email" placeholder="Email" value=body ? body.email : '' required)
-          label(for="password") Password*
-          input(type="password" name="password" placeholder="Password" required)
-          label(for="passwordconfirm") Confirm password
-          input(type="password" name="passwordconfirm" placeholder="Confirm password" required)
-          label(for="firstname") First name
-          input(type="text" name="firstname" placeholder="First name" value=body ? body.firstname : '')
-          label(for="lastname") Last name
-          input(type="text" name="lastname" placeholder="Last name" value=body ? body.lastname : '')
-          button.button-primary.button-signup Create account
+          label(for="title") Title*
+          input(type="text" name="title" placeholder="Name of your event" value=body ? body.title : '' required)
+          label(for="foodtype") Food type*
+          input(type="text" name="foodtype" placeholder="What will you cook?" value=body ? body.foodtype : '' required)
+          label(for="price") Price per person
+          input(type="text" name="price" placeholder="0.00€" value=body ? body.price : '' required )
+          label(for="description") Description
+          input(type="text" name="description" placeholder="Tell us a bit more..." value=body ? body.description : '')
+          button.button-primary.button-signup Create event

@@ -16,7 +16,7 @@ router.get('/search', catchErrors(eventController.getSearchPage));
 router.get('/dashboard', authController.checkAuth, catchErrors(eventController.getDashboard));
 
 router.get('/newevent', authController.checkAuth, catchErrors(eventController.getNewEventPage));
-router.post('/newevent', authController.checkAuth, catchErrors(authController.makeNewEvent));
+router.post('/newevent', authController.checkAuth, catchErrors(eventController.makeNewEvent));
 
 router.get('/login', authController.getLoginForm);
 router.post('/login', passport.authenticate('local', {
