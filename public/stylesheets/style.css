@@ -37,7 +37,7 @@ nav li:last-of-type {
 }
 
 .frontpage-button {
-  margin-top: 7rem;
+  margin-top: 2rem;
 }
 
 .eventcard-container {
@@ -140,6 +140,9 @@ nav li:last-of-type {
 @media (min-width: 400px) {
   nav li {
     margin: 20px;
+  }
+  .frontpage-button {
+    margin-top: 2rem;
   }
 }
 
