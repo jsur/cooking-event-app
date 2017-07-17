@@ -32,7 +32,8 @@ const helpers = require('./helpers');
 app.use(session({
   'secret': process.env.SECRET,
   'resave': false,
-  'saveUninitialized': false
+  'saveUninitialized': false,
+  'cookie': { 'maxAge': 600000 }
 }));
 
 // Passport auth handling

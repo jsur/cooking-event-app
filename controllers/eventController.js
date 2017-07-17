@@ -54,7 +54,8 @@ exports.getEventWithId = async (req, res, next) => {
 
   const eventId = req.params.id;
   const event = await Event.findById(eventId);
-  const date = moment(event.date).format('LLL');
+  const date = moment(event.date).format('LL');
+  const time = moment(event.date).format('LT');
 
-  res.render('event', { event, date });
+  res.render('event', { event, date, time });
 };

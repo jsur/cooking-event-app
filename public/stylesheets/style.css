@@ -50,7 +50,7 @@ nav li:last-of-type {
 
 .eventcard {
   min-width: 25%;
-  border: 1px solid black;
+  border: 1px solid grey;
   width: 300px;
   height: 150px;
   margin: 1rem;
@@ -92,9 +92,13 @@ nav li:last-of-type {
 }
 
 .eventimg {
-  width: 280px;
+  width: 100%;
   height: 280px;
   border: 1px solid black;
+}
+
+.eventdetails p {
+  margin: 0;
 }
 
 .button-eventdescription {
@@ -106,9 +110,14 @@ nav li:last-of-type {
   display: none;
 }
 
+.form-attending {
+  margin: 0;
+}
+
 .button-attending {
   background: #1fdd67;
   color: black;
+  margin-top: 10px;
 }
 
 .footer {
@@ -155,7 +164,6 @@ nav li:last-of-type {
     width: 40%;
   }
   .eventimg {
-    width: 500px;
     height: 500px;
   }
 }

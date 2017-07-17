@@ -32,6 +32,19 @@ function loadPlaces (map, lat, lng) {
 
         return marker;
       });
+
+      const infoWindow = new google.maps.InfoWindow();
+
+      markers.forEach((marker) => {
+        marker.addListener('click', () => {
+          const html = `
+            <p>Name: ${marker.place.title}</p>
+            <a href='/event/${marker.place._id}'>Event details</a>
+          `;
+          infoWindow.setContent(html);
+          infoWindow.open(map, marker);
+        });
+      });
     })
     .catch((error) => {
       console.log(error);

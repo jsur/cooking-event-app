@@ -11,9 +11,10 @@ block content
       .three.columns.attendevent
         aside.eventdetails
           h3= event.title
-          p When: #{date}
-          form(action='/event/'+event._id method='POST')
+          p 📅 #{date}
+          p 🕖 #{time}
+          p 💰 #{event.price} €
+          form.form-attending(action='/event/'+event._id method='POST')
             button.button-attending I'm attending!
           button.button-eventdescription Read description 👇
           p.p-eventdescription= event.description
-        
