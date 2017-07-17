@@ -66,8 +66,8 @@ exports.makeNewEvent = async (req, res, next) => {
     'price': req.body.price,
     'description': req.body.description
   };
-
-  const newEvent = Event(eventInfo);
+  console.log(eventInfo);
+  const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
   req.flash('success', `Event ${event.title} created!`);
   res.redirect('/dashboard');
