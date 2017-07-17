@@ -64,7 +64,9 @@ exports.makeNewEvent = async (req, res, next) => {
     'title': req.body.title,
     'foodtype': req.body.foodtype,
     'price': req.body.price,
-    'description': req.body.description
+    'description': req.body.description,
+    'date': req.body.date,
+    'location': req.body.location.coordinates
   };
   console.log(eventInfo);
   const newEvent = new Event(eventInfo);

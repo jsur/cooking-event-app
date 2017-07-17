@@ -11,7 +11,11 @@ block content
           label(for="foodtype") Food type*
           input(type="text" name="foodtype" placeholder="What will you cook?" value=body ? body.foodtype : '' required)
           label(for="price") Price per person
-          input(type="text" name="price" placeholder="0.00€" value=body ? body.price : '' required )
+          input(type="number" name="price" placeholder="0.00€" value=body ? body.price : '' required )
           label(for="description") Description
           input(type="text" name="description" placeholder="Tell us a bit more..." value=body ? body.description : '')
+          label(for="date") Date
+          input(type="date" name="date" value=body ? body.date : '' required)
+          label(for="location") Location
+          input(type="text" name="location" value=body ? body.location : '' required)
           button.button-primary.button-signup Create event
