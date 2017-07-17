@@ -19,16 +19,13 @@ exports.getDashboard = async (req, res, next) => {
   // Await that Event.find is ready, then render
   const attendedEvents = await Event.find({ 'attendees': req.user.id }).limit(3);
   const hostedEvents = await Event.find({ 'owner': req.user.id }).limit(3);
-  // const events = await Event.find({ 'attendees': req.user.id });
-  // if (events.length > 0) {
-  //   events.limit(3);
-  // }
-  // else {
-  //   e
-  // }
   res.render('dashboard', { attendedEvents, hostedEvents });
 };
 
+exports.getNewEventPage = async (req, res, next) => {
+  // Await that Event.find is ready, then render
+  res.render('newevent');
+};
 
 exports.getEventsNearCoordinate = async (req, res, next) => {
 
@@ -58,4 +55,19 @@ exports.getEventWithId = async (req, res, next) => {
   const time = moment(event.date).format('LT');
 
   res.render('event', { event, date, time });
+};
+
+exports.makeNewEvent = async (req, res, next) => {
+
+  const eventInfo = {
+    'owner': req.user.id,
+    'title': req.body.title,
+    'foodtype': req.body.foodtype,
+    'price': req.body.price,
+    'description': req.body.description
+  };
+
+  const newEvent = Event(eventInfo);
+  const event = await newEvent.save();
+  res.redirect('/dashboard');
 };
