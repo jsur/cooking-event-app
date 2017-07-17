@@ -182,6 +182,18 @@ const events = [
       'coordinates': [-3.707398, 40.415363]
     },
     'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+  },
+  {
+    'owner': ['5968cb361ef39b7f80931bda'],
+    'title': 'Sitges food event 1',
+    'foodtype': ['Spanish'],
+    'price': 100,
+    'description': 'Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges',
+    'location': {
+      'type': 'Point',
+      'coordinates': [1.7750302332, 41.2363907211]
+    },
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
   }
 ];
 
