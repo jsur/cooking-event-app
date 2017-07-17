@@ -23,3 +23,12 @@ exports.makeNewUser = async (req, res, next) => {
 exports.getLoginForm = (req, res, next) => {
   res.render('login');
 };
+
+exports.checkAuth = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  req.flash('error', 'You have to be logged in to do that!');
+  res.redirect('/');
+};
