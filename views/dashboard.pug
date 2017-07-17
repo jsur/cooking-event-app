@@ -17,4 +17,5 @@ block content
           if hostedEvents
             each event in hostedEvents
               +eventCard(event)
-          button.button-primary.button-signup Create a new event
+          form(action="/newevent")
+            button.button-primary.button-signup Create a new event

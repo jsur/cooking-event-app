@@ -69,5 +69,6 @@ exports.makeNewEvent = async (req, res, next) => {
 
   const newEvent = Event(eventInfo);
   const event = await newEvent.save();
+  req.flash('success', `Event ${event.title} created!`);
   res.redirect('/dashboard');
 };
