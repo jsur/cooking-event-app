@@ -28,7 +28,7 @@ router.post('/login', passport.authenticate('local', {
 }));
 
 router.get('/event/:id', catchErrors(eventController.getEventWithId));
-router.post('/event/:id', authController.checkAuth);
+router.post('/event/:id', authController.checkAuth, catchErrors(eventController.attendEvent));
 
 router.post('/signup', authController.validateSignUpInfo, catchErrors(authController.makeNewUser));
 

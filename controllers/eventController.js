@@ -53,8 +53,16 @@ exports.getEventWithId = async (req, res, next) => {
   const event = await Event.findById(eventId);
   const date = moment(event.date).format('LL');
   const time = moment(event.date).format('LT');
+  let userIsAttending = false;
 
-  res.render('event', { event, date, time });
+  // We also need to know if a logged in user is already attending
+  if (res.locals.isUserLoggedIn) {
+    userIsAttending = event.attendees.some((person) => {
+      return person.equals(req.user._id);
+    });
+  }
+
+  res.render('event', { event, date, time, userIsAttending });
 };
 
 exports.makeNewEvent = async (req, res, next) => {
@@ -73,4 +81,22 @@ exports.makeNewEvent = async (req, res, next) => {
   const event = await newEvent.save();
   req.flash('success', `Event ${event.title} created!`);
   res.redirect('/dashboard');
+};
+
+exports.attendEvent = async (req, res, next) => {
+
+  const event = await Event.findById(req.params.id);
+  const userIsAttending = event.attendees.some((person) => {
+    return person.equals(req.user._id);
+  });
+
+  if (userIsAttending) {
+    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, { '$pull': { 'attendees': req.user._id } });
+    req.flash('success', `You have canceled your attendance to ${updatedEvent.title}.`);
+    res.redirect('/');
+  } else {
+    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, { '$push': { 'attendees': req.user._id } });
+    req.flash('success', `You are now attending ${updatedEvent.title} at ${moment(updatedEvent.date).format('LL')}!`);
+    res.redirect('/');
+  }
 };
