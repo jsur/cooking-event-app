@@ -10,7 +10,8 @@ block content
           if attendedEvents
             each event in attendedEvents
               +eventCard(event)
-          button.button-primary.button-login Browse events
+          form(action="/search")
+            button.button-primary.button-login Browse events
       .six.columns
           h2 Hosted events
           if hostedEvents

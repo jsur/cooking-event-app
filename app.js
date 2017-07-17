@@ -13,6 +13,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
+const multer = require('multer');
 // Get content from .env file
 require('dotenv').config({'path': '.env'});
 // Routes
@@ -23,6 +24,8 @@ mongoose.connect(process.env.MONGODB_URI);
 // Handlers
 const errorHandlers = require('./handlers/errorHandlers');
 const User = require('./models/User');
+const Event = require('./models/Event');
+// const Picture = require('../models/pictures');
 // Helpers
 const helpers = require('./helpers');
 
