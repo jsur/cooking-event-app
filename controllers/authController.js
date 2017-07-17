@@ -34,3 +34,24 @@ exports.checkAuth = (req, res, next) => {
   req.flash('error', 'You have to be logged in to do that!');
   res.redirect('/');
 };
+
+exports.validateSignUpInfo = async (req, res, next) => {
+  // Here we use express-validator functions that are available in req object
+  req.checkBody('email', 'Email is not valid.').isEmail();
+  req.checkBody('password', 'Password can\'t be empty.').notEmpty();
+  req.checkBody('passwordconfirm', 'Given passwords do not match.').equals(req.body.password);
+
+  const errors = await req.getValidationResult();
+
+  if (errors.array().length > 0) {
+    const errorArray = errors.array();
+    req.flash('error', errorArray.map((err) => {
+      return err.msg;
+    }));
+    // req.body given to template so that the user does not have to refill all fields
+    res.render('login', { 'flashes': req.flash(), 'body': req.body });
+
+    return;
+  }
+  next();
+};

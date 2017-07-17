@@ -13,6 +13,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
+const expressValidator = require('express-validator');
 const multer = require('multer');
 // Get content from .env file
 require('dotenv').config({'path': '.env'});
@@ -86,6 +87,7 @@ if (process.env.NODE_ENV === 'development') {
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended': false}));
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
