@@ -7,7 +7,7 @@ block content
     h2= event.title
     .row.event-row
       .nine.columns
-        img.eventimg
+        img.eventimg(src=event.image.path)
       .three.columns.attendevent
         aside.eventdetails
           h3= event.title

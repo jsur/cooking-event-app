@@ -5,6 +5,10 @@ mongoose.connect(process.env.MONGODB_URI);
 const User = require('../models/User');
 const Event = require('../models/Event');
 
+User.remove({});
+
+Event.remove({});
+
 const users = [
   {
     'email': 'camille@hotmail.com',
@@ -61,7 +65,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1645279, 41.3902667]
     },
-    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735d', '5968cad1a172577f721e735f']
+    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735d', '5968cad1a172577f721e735f'],
+    'date': '2017-07-08 20:00:00'
   },
   {
     'owner': ['5968cad1a172577f721e735d'],
@@ -73,7 +78,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1827595, 41.3817381]
     },
-    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e7362', '5968cad1a172577f721e735f']
+    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e7362', '5968cad1a172577f721e735f'],
+    'date': '2017-07-14 21:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -85,7 +91,12 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1664345, 41.3857813]
     },
-    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e7362']
+    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e7362'],
+    'date': '2017-07-02 20:30:00',
+    'image': {
+      'name': 'pizza-night',
+      'path': '/uploads/pizza-night.jpg'
+    }
   },
   {
     'owner': ['5968cad1a172577f721e735d'],
@@ -97,7 +108,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1743078, 41.4009404]
     },
-    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e7362', '5968cad1a172577f721e735f']
+    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e7362', '5968cad1a172577f721e735f'],
+    'date': '2017-07-01 14:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -109,7 +121,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1652941, 41.3941512]
     },
-    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f']
+    'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f'],
+    'date': '2017-07-29 20:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -121,7 +134,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.2014381, 41.3951386]
     },
-    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f']
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f'],
+    'date': '2017-07-23 11:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -133,7 +147,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1620006, 41.4065883]
     },
-    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e7360', '5968cad1a172577f721e735f']
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e7360', '5968cad1a172577f721e735f'],
+    'date': '2017-08-05 20:30:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -145,7 +160,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1893282, 41.3930448]
     },
-    'attendees': ['5968cad1a172577f721e735d', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f']
+    'attendees': ['5968cad1a172577f721e735d', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f'],
+    'date': '2017-08-01 21:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -157,7 +173,8 @@ const events = [
       'type': 'Point',
       'coordinates': [2.1658517, 41.3787784]
     },
-    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e735d']
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e735d'],
+    'date': '2017-06-10 21:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -169,7 +186,8 @@ const events = [
       'type': 'Point',
       'coordinates': [31.340002, 30.044281]
     },
-    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360'],
+    'date': '2017-08-12 21:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -181,7 +199,8 @@ const events = [
       'type': 'Point',
       'coordinates': [-3.707398, 40.415363]
     },
-    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360'],
+    'date': '2017-08-11 21:00:00'
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
@@ -197,8 +216,6 @@ const events = [
   }
 ];
 
-User.remove({});
-
 User.create(users, (err, docs) => {
   if (err) {
     throw err;
@@ -208,8 +225,6 @@ User.create(users, (err, docs) => {
   });
   mongoose.connection.close();
 });
-
-Event.remove({});
 
 Event.create(events, (err, docs) => {
   if (err) {
