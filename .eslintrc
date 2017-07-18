@@ -96,7 +96,6 @@
       "no-extra-parens": "error",
       "no-floating-decimal": "error",
       "no-global-assign": "error",
-      "no-implicit-coercion": "error",
       "no-implicit-globals": "error",
       "no-implied-eval": "error",
       "no-invalid-this": "error",
@@ -167,7 +166,6 @@
       "prefer-reflect": "error",
       "prefer-rest-params": "error",
       "prefer-spread": "error",
-      "prefer-template": "error",
       "quote-props": "error",
       "quotes": [
           "error",

@@ -36,11 +36,11 @@ dateSlider.noUiSlider.on('update', (values, handle) => {
 
 // Append a suffix to dates.
 // Example: 23 => 23rd, 1 => 1st.
-function nth (d) {
-  if (d > 3 && d < 21) {
+function nth (date) {
+  if (date > 3 && date < 21) {
     return 'th';
   }
-  switch (d % 10) {
+  switch (date % 10) {
   case 1: return 'st';
   case 2: return 'nd';
   case 3: return 'rd';

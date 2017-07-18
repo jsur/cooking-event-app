@@ -1,8 +1,6 @@
 const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
-const http = require('https');
-const request = require("request");
 
 // With exports.something we don't need to use module.exports in the
 // end of the file
@@ -63,42 +61,10 @@ exports.getEventWithId = async (req, res, next) => {
   res.render('event', { event, date, time });
 };
 
-// function getGeocode (location) {
-//
-//   var responseObject = [];
-//
-//   const options = {
-//     'method': 'GET',
-//     'hostname': 'maps.googleapis.com',
-//     'port': null,
-//     'path': '/maps/api/geocode/json?address=' + location.split(' ').join('+') + '&key=AIzaSyBD5ntBqVPjV3yyQueoAvdPbNYJAEnSPq4'
-//   };
-//
-//
-//   var request = http.request(options, function (res) {
-//     const chunks = [];
-//
-//
-//     res.on('data', function (chunk) {
-//       chunks.push(chunk);
-//     });
-//
-//     res.on('end', function () {
-//       const body = Buffer.concat(chunks).toString();
-//       responseObject = JSON.parse(body);
-//       // console.log(responseObject.results[0].geometry.location)
-//     });
-//   });
-//   console.log(responseObject);
-//   request.end();
-//   // return responseObject;
-//   // console.log(responseObject);
-// };
-
 exports.makeNewEvent = async (req, res, next) => {
 
-  var latitude = req.body.latitude;
-  var longitude = req.body.longitude
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
 
   const eventInfo = {
     'owner': req.user.id,
@@ -108,12 +74,7 @@ exports.makeNewEvent = async (req, res, next) => {
     'description': req.body.description,
     'date': req.body.date,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
-
-<<<<<<< HEAD
   };
-=======
-  // getGeocode(req.body.location)
->>>>>>> 898c62f11cb3ba14c7c88cd753ea2da856aac9cd
 
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
