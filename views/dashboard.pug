@@ -3,16 +3,17 @@ extends layout
 include mixins/eventCard
 
 block content
-  .container
+  .container.dashboard
     .row
-      .six.columns
+      .twelve.columns
           h2 Attended events
           if attendedEvents
             each event in attendedEvents
               +eventCard(event)
           form(action="/search")
             button.button-primary.button-login Browse events
-      .six.columns
+    .row
+      .eleven.columns
           h2 Hosted events
           if hostedEvents
             each event in hostedEvents
