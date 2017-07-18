@@ -77,7 +77,6 @@
       "max-statements-per-line": "error",
       "new-parens": "error",
       "newline-before-return": "error",
-      "newline-per-chained-call": "error",
       "no-alert": "error",
       "no-array-constructor": "error",
       "no-bitwise": "error",
@@ -135,7 +134,6 @@
       "no-script-url": "error",
       "no-self-compare": "error",
       "no-sequences": "error",
-      "no-shadow": "error",
       "no-shadow-restricted-names": "error",
       "no-spaced-func": "error",
       "no-tabs": "error",
@@ -180,7 +178,6 @@
       "semi": "error",
       "semi-spacing": "error",
       "sort-imports": "error",
-      "sort-vars": "error",
       "space-before-blocks": "error",
       "space-before-function-paren": "error",
       "space-in-parens": [

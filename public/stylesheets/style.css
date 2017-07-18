@@ -40,12 +40,45 @@ nav li:last-of-type {
   margin-top: 2rem;
 }
 
-.eventcard-container {
+#mapevents,
+.eventcard-container-main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 3rem;
+}
+
+.filterbar {
+  height: 8%;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.dateslider-container,
+.priceslider-container {
+  width: 50%;
+}
+
+#slider-date,
+#slider-price {
+  margin-bottom: 5px;
+  width: 85%;
+}
+
+#event-start,
+#event-end {
+  font-size: 12px;
+}
+
+#event-start::before {
+  content: 'From: ';
+}
+
+#event-end::before {
+  content: 'To: ';
 }
 
 .eventcard {
