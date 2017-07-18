@@ -1,6 +1,7 @@
 const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
+const http = require('https');
 
 // With exports.something we don't need to use module.exports in the
 // end of the file
@@ -58,19 +59,39 @@ exports.getEventWithId = async (req, res, next) => {
   const event = await Event.findById(eventId);
   const date = moment(event.date).format('LL');
   const time = moment(event.date).format('LT');
-  let userIsAttending = false;
 
-  // We also need to know if a logged in user is already attending
-  if (res.locals.isUserLoggedIn) {
-    userIsAttending = event.attendees.some((person) => {
-      return person.equals(req.user._id);
-    });
-  }
-
-  res.render('event', { event, date, time, userIsAttending });
+  res.render('event', { event, date, time });
 };
 
+// function getGeocode (location) {
+//
+//
+//   const options = {
+//     'method': 'GET',
+//     'hostname': 'maps.googleapis.com',
+//     'port': null,
+//     'path': '/maps/api/geocode/json?address=' + location.split(' ').join('+') + '&key=AIzaSyBD5ntBqVPjV3yyQueoAvdPbNYJAEnSPq4'
+//   };
+//
+//
+//   var geoCode = http.request(options, function (res) {
+//     const chunks = [];
+//
+//     res.on('data', function (chunk) {
+//       chunks.push(chunk);
+//     });
+//
+//     res.on('end', function () {
+//       const body = Buffer.concat(chunks);
+//       const responseObject = JSON.parse(body.toString());
+//     });
+//   });
+//   geoCode.end();
+//   console.log(geoCode)
+// };
+
 exports.makeNewEvent = async (req, res, next) => {
+
 
   const eventInfo = {
     'owner': req.user.id,
@@ -79,29 +100,14 @@ exports.makeNewEvent = async (req, res, next) => {
     'price': req.body.price,
     'description': req.body.description,
     'date': req.body.date,
-    'location': req.body.location.coordinates
+    'location': {'type': 'Point', 'coordinates': [req.body.longitude, req.body.latitude]}
   };
-  console.log(eventInfo);
+
+// getGeocode(req.body.location)
+
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
   req.flash('success', `Event ${event.title} created!`);
+  console.log(eventInfo);
   res.redirect('/dashboard');
-};
-
-exports.attendEvent = async (req, res, next) => {
-
-  const event = await Event.findById(req.params.id);
-  const userIsAttending = event.attendees.some((person) => {
-    return person.equals(req.user._id);
-  });
-
-  if (userIsAttending) {
-    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, { '$pull': { 'attendees': req.user._id } });
-    req.flash('success', `You have canceled your attendance to ${updatedEvent.title}.`);
-    res.redirect('/');
-  } else {
-    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, { '$push': { 'attendees': req.user._id } });
-    req.flash('success', `You are now attending ${updatedEvent.title} at ${moment(updatedEvent.date).format('LL')}!`);
-    res.redirect('/');
-  }
 };
