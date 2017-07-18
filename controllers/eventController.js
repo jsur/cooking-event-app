@@ -2,6 +2,7 @@ const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
 const http = require('https');
+const request = require("request");
 
 // With exports.something we don't need to use module.exports in the
 // end of the file
@@ -45,7 +46,6 @@ exports.getEventsNearCoordinate = async (req, res, next) => {
   }).select('name title description location price foodtype');
 
   res.json(events);
-
 };
 
 exports.getEventWithId = async (req, res, next) => {
@@ -60,6 +60,7 @@ exports.getEventWithId = async (req, res, next) => {
 
 // function getGeocode (location) {
 //
+//   var responseObject = [];
 //
 //   const options = {
 //     'method': 'GET',
@@ -69,24 +70,30 @@ exports.getEventWithId = async (req, res, next) => {
 //   };
 //
 //
-//   var geoCode = http.request(options, function (res) {
+//   var request = http.request(options, function (res) {
 //     const chunks = [];
+//
 //
 //     res.on('data', function (chunk) {
 //       chunks.push(chunk);
 //     });
 //
 //     res.on('end', function () {
-//       const body = Buffer.concat(chunks);
-//       const responseObject = JSON.parse(body.toString());
+//       const body = Buffer.concat(chunks).toString();
+//       responseObject = JSON.parse(body);
+//       // console.log(responseObject.results[0].geometry.location)
 //     });
 //   });
-//   geoCode.end();
-//   console.log(geoCode)
+//   console.log(responseObject);
+//   request.end();
+//   // return responseObject;
+//   // console.log(responseObject);
 // };
 
 exports.makeNewEvent = async (req, res, next) => {
 
+  var latitude = req.body.latitude;
+  var longitude = req.body.longitude
 
   const eventInfo = {
     'owner': req.user.id,
@@ -95,14 +102,12 @@ exports.makeNewEvent = async (req, res, next) => {
     'price': req.body.price,
     'description': req.body.description,
     'date': req.body.date,
-    'location': {'type': 'Point', 'coordinates': [req.body.longitude, req.body.latitude]}
-  };
+    'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
 
-// getGeocode(req.body.location)
+  };
 
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
   req.flash('success', `Event ${event.title} created!`);
-  console.log(eventInfo);
   res.redirect('/dashboard');
 };
