@@ -5,6 +5,7 @@ const passport = require('passport');
 // This way we can keep related functionalities in their own controllers
 const eventController = require('../controllers/eventController');
 const authController = require('../controllers/authController');
+const userController = require('../controllers/userController');
 // ES6 Object destructuring
 const {catchErrors} = require('../handlers/errorHandlers');
 
@@ -31,6 +32,9 @@ router.get('/event/:id', catchErrors(eventController.getEventWithId));
 router.post('/event/:id', authController.checkAuth, catchErrors(eventController.attendEvent));
 
 router.post('/signup', authController.validateSignUpInfo, catchErrors(authController.makeNewUser));
+
+router.get('/profile', authController.checkAuth, catchErrors(userController.getUser));
+router.post('/profile', authController.checkAuth, catchErrors(userController.updateUser));
 
 router.get('/logout', (req, res) => {
   req.logout();

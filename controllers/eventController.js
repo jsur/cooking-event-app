@@ -11,19 +11,16 @@ exports.getMainPage = async (req, res, next) => {
 };
 
 exports.getSearchPage = async (req, res, next) => {
-  // Await that Event.find is ready, then render
   res.render('search');
 };
 
 exports.getDashboard = async (req, res, next) => {
-  // Await that Event.find is ready, then render
   const attendedEvents = await Event.find({ 'attendees': req.user.id }).limit(3);
   const hostedEvents = await Event.find({ 'owner': req.user.id }).limit(3);
   res.render('dashboard', { attendedEvents, hostedEvents });
 };
 
 exports.getNewEventPage = async (req, res, next) => {
-  // Await that Event.find is ready, then render
   res.render('newevent');
 };
 

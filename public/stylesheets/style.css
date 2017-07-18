@@ -4,7 +4,6 @@ body {
 }
 
 nav {
-  border-bottom: 1px solid black;
   height: 100px;
 }
 
@@ -32,7 +31,6 @@ nav li:last-of-type {
 
 .frontpage-section-1 {
   height: 50vh;
-  border-bottom: 1px solid black;
   text-align: center;
 }
 
@@ -115,7 +113,8 @@ nav li:last-of-type {
 }
 
 .button-login,
-.button-signup {
+.button-signup,
+.button-save {
   display: block;
 }
 
@@ -161,10 +160,6 @@ nav li:last-of-type {
 
 .attending-notice {
   color: #1fdd67;
-}
-
-.dashboard {
-
 }
 
 .footer {
