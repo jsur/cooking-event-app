@@ -66,7 +66,7 @@ const events = [
       'coordinates': [2.1645279, 41.3902667]
     },
     'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735d', '5968cad1a172577f721e735f'],
-    'date': '2017-07-08 20:00:00',
+    'date': '2017-07-21 20:00:00',
     'image': {
       'name': 'taste-of-brazil',
       'path': '/uploads/taste-of-brazil.png'
@@ -83,7 +83,7 @@ const events = [
       'coordinates': [2.1827595, 41.3817381]
     },
     'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e7362', '5968cad1a172577f721e735f'],
-    'date': '2017-07-14 21:00:00',
+    'date': '2017-07-23 21:00:00',
     'image': {
       'name': 'club-lola',
       'path': '/uploads/club-lola.png'
@@ -100,7 +100,7 @@ const events = [
       'coordinates': [2.1664345, 41.3857813]
     },
     'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e7362'],
-    'date': '2017-07-02 20:30:00',
+    'date': '2017-07-29 20:30:00',
     'image': {
       'name': 'pizza-night',
       'path': '/uploads/pizza-night.jpg'
@@ -117,7 +117,7 @@ const events = [
       'coordinates': [2.1743078, 41.4009404]
     },
     'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e7362', '5968cad1a172577f721e735f'],
-    'date': '2017-07-01 14:00:00',
+    'date': '2017-07-31 14:00:00',
     'image': {
       'name': 'garden-party',
       'path': '/uploads/garden-party.png'
@@ -134,7 +134,7 @@ const events = [
       'coordinates': [2.1652941, 41.3941512]
     },
     'attendees': ['59689ed42850907a7e7aa67c', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f'],
-    'date': '2017-07-29 20:00:00',
+    'date': '2017-11-15 20:00:00',
     'image': {
       'name': 'experimental-dinner',
       'path': '/uploads/experimental-dinner.png'
@@ -151,7 +151,7 @@ const events = [
       'coordinates': [2.2014381, 41.3951386]
     },
     'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f'],
-    'date': '2017-07-23 11:00:00',
+    'date': '2017-09-18 11:00:00',
     'image': {
       'name': 'giant-brunch',
       'path': '/uploads/giant-brunch.png'
@@ -168,7 +168,7 @@ const events = [
       'coordinates': [2.1620006, 41.4065883]
     },
     'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e7360', '5968cad1a172577f721e735f'],
-    'date': '2017-08-05 20:30:00',
+    'date': '2017-10-19 20:30:00',
     'image': {
       'name': 'italian-family-dinner',
       'path': '/uploads/italian-family-dinner.png'
@@ -185,7 +185,7 @@ const events = [
       'coordinates': [2.1893282, 41.3930448]
     },
     'attendees': ['5968cad1a172577f721e735d', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f'],
-    'date': '2017-08-01 21:00:00',
+    'date': '2018-01-06 21:00:00',
     'image': {
       'name': 'taco-tuesday',
       'path': '/uploads/taco-tuesday.png'
@@ -202,7 +202,7 @@ const events = [
       'coordinates': [2.1658517, 41.3787784]
     },
     'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e735d'],
-    'date': '2017-06-10 21:00:00',
+    'date': '2017-09-03 21:00:00',
     'image': {
       'name': 'spices-of-india',
       'path': '/uploads/spices-of-india.png'
@@ -248,6 +248,7 @@ const events = [
     'foodtype': ['Spanish'],
     'price': 100,
     'description': 'Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges Sitges',
+    'date': '2017-08-20 21:00:00',
     'location': {
       'type': 'Point',
       'coordinates': [1.7750302332, 41.2363907211]

@@ -9,8 +9,8 @@ const dateSlider = document.getElementById('slider-date');
 noUiSlider.create(dateSlider, {
 // Create two timestamps to define a range.
   'range': {
-    'min': timestamp('2017'),
-    'max': timestamp('2019')
+    'min': timestamp(Date.now()),
+    'max': timestamp(new Date().setFullYear(new Date().getFullYear() + 1))
   },
 
   // Steps of one week

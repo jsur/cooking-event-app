@@ -103,7 +103,7 @@ exports.makeNewEvent = async (req, res, next) => {
     'location': {'type': 'Point', 'coordinates': [req.body.longitude, req.body.latitude]}
   };
 
-// getGeocode(req.body.location)
+  // getGeocode(req.body.location)
 
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
