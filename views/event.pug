@@ -15,6 +15,7 @@ block content
             p.attending-notice You are attending this event!
           p 📅 #{date}
           p 🕖 #{time}
+          p 🍲 #{event.foodtype}
           p 💰 #{event.price} €
           form.form-attending(action='/event/'+event._id method='POST')
             if !userIsAttending

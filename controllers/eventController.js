@@ -29,6 +29,9 @@ exports.getNewEventPage = async (req, res, next) => {
 
 exports.getEventsNearCoordinate = async (req, res, next) => {
 
+  const mindate = moment(parseInt(req.query.fromdate, 10));
+  const maxdate = moment(parseInt(req.query.todate, 10));
+
   const events = await Event.find({
     'location': {
       '$near': {
@@ -41,7 +44,9 @@ exports.getEventsNearCoordinate = async (req, res, next) => {
         '$maxDistance': 20000
       }
     }
-  }).select('name title description location price foodtype');
+  })
+    .where('price').gte(req.query.minprice).lte(req.query.maxprice)
+    .where('date').gte(mindate).lte(maxdate);
 
   res.json(events);
 
