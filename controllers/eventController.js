@@ -1,6 +1,8 @@
 const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
+const multer = require('multer');
+const upload = multer({ dest: '../public/uploads/' });
 
 // With exports.something we don't need to use module.exports in the
 // end of the file
@@ -131,8 +133,10 @@ exports.makeNewEvent = async (req, res, next) => {
     'description': req.body.description,
     'date': req.body.date,
     'address': req.body.address,
-    'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
+    'location': {'type': 'Point', 'coordinates': [longitude, latitude]},
+    'image': {'name': req.file.filename, 'path': `/uploads/${req.file.filename}`}
   };
+
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
   req.flash('success', `Event ${event.title} created!`);
