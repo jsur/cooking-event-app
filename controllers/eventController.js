@@ -55,6 +55,7 @@ exports.getEventWithId = async (req, res, next) => {
   const date = moment(event.date).format('LL');
   const time = moment(event.date).format('LT');
   let userIsAttending = false;
+  let userIsOwner = false;
 
   // We also need to know if a logged in user is already attending
   if (res.locals.isUserLoggedIn) {
@@ -63,7 +64,14 @@ exports.getEventWithId = async (req, res, next) => {
     });
   }
 
-  res.render('event', { event, date, time, userIsAttending });
+  // We need to check if the logged in user is already the owner of the event
+  if (res.locals.isUserLoggedIn) {
+    userIsOwner = event.owner.some((person) => {
+      return person.equals(req.user._id);
+    });
+  }
+
+  res.render('event', { event, date, time, userIsAttending, userIsOwner });
 };
 
 exports.attendEvent = async (req, res, next) => {
@@ -84,6 +92,29 @@ exports.attendEvent = async (req, res, next) => {
   }
 };
 
+exports.getEvent = async (req, res, next) => {
+  const event = await Event.findById(req.params.id);
+  res.render('editevent', { event });
+};
+
+exports.editEvent = async (req, res, next) => {
+
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
+
+  const eventInfo = {
+    'title': req.body.title,
+    'capacity': req.body.capacity,
+    'date': req.body.date,
+    'description': req.body.description,
+    'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
+  };
+
+  const updatedEvent = await Event.findByIdAndUpdate(req.params.id, { eventInfo });
+  // req.flash('success', `${updatedEvent.title} has been updated.`);
+  res.redirect('/editevent');
+};
+
 exports.makeNewEvent = async (req, res, next) => {
 
   const latitude = req.body.latitude;
@@ -93,6 +124,7 @@ exports.makeNewEvent = async (req, res, next) => {
     'owner': req.user.id,
     'title': req.body.title,
     'foodtype': req.body.foodtype,
+    'capacity': req.body.capacity,
     'price': req.body.price,
     'description': req.body.description,
     'date': req.body.date,

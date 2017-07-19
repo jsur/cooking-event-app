@@ -36,6 +36,9 @@ router.post('/signup', authController.validateSignUpInfo, catchErrors(authContro
 router.get('/profile', authController.checkAuth, catchErrors(userController.getUser));
 router.post('/profile', authController.checkAuth, catchErrors(userController.updateUser));
 
+router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEvent));
+router.post('/editevent/:id', authController.checkAuth, catchErrors(eventController.editEvent));
+
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success', 'You have logged out.');

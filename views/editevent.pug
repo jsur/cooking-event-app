@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    .row
+      .six.columns
+        form(action='/editevent/'+event._id method="POST")
+          h2 Edit Event
+          label(for="title") Title
+          input(type="text" name="title" placeholder="Name of your event" value= event.title : '' required)
+          label(for="capacity") Number of attendees
+          input(type="number" name="capacity" placeholder="0" value= event.capacity : '' required )
+          label(for="description") Description
+          input(type="text" name="description" placeholder="Tell us a bit more..." value= event.description : '')
+          label(for="date") Date
+          input(type="date" name="date" value= event.date : '' required)
+          input(id="latitude" type="text" name="latitude" value= event.location[1] : '' hidden)
+          input(id="longitude" type="text" name="longitude" value= event.location[0] : '' hidden)
+          label(for="location") Location
+          input(id="location" type="text" name="location" value= event.location : '' required)
+          button.button-primary.button-signup Update event

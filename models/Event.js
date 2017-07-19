@@ -5,6 +5,7 @@ const eventSchema = new Schema({
   'owner': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
   'title': String,
   'foodtype': [String],
+  'capacity': Number,
   'price': Number,
   'description': String,
   'date': {

@@ -6,9 +6,9 @@ block content
       img.staticmap(src=helpers.staticMap(event.location.coordinates))
     h2= event.title
     .row.event-row
-      .nine.columns
+      .eight.columns
         img.eventimg(src=event.image.path)
-      .three.columns.attendevent
+      .four.columns.attendevent
         aside.eventdetails
           h3= event.title
           if userIsAttending
@@ -18,9 +18,13 @@ block content
           p 🍲 #{event.foodtype}
           p 💰 #{event.price} €
           form.form-attending(action='/event/'+event._id method='POST')
-            if !userIsAttending
+            if !userIsAttending && !userIsOwner
               button.button-attending I'm attending!
             if userIsAttending
-              button.button-cancel Cancel
+              button.button-cancel Cancel attendance
+          form.form-attending(action='/editevent/'+event._id method='GET')
+            if userIsOwner
+              button.button-edit Edit this event
+              button.button-delete Cancel this event
           button.button-eventdescription Read description 👇
           p.p-eventdescription= event.description
