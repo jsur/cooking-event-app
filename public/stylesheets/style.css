@@ -18,7 +18,7 @@ nav li {
   display: inline;
   margin: 10px;
   float: left;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 nav li a {
@@ -29,6 +29,10 @@ nav li a {
 
 nav li:last-of-type {
   float: right;
+}
+
+.newevent-main-li {
+  display: none;
 }
 
 .header-h2 {
@@ -240,9 +244,14 @@ nav li:last-of-type {
     height: 100vh;
   }
   nav li {
-    margin: 20px;
+    margin: 17.5px;
     font-size: inherit;
   }
+
+  .newevent-main-li {
+    display: inherit;
+  }
+
   .filterbar {
     flex-direction: row;
     height: 15%;
