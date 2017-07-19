@@ -24,9 +24,20 @@ const eventSchema = new Schema({
     'createdAt': 'created_at',
     'updatedAt': 'updated_at'
   }
+}, {
+  'toJSON': { 'virtuals': true },
+  'toObject': { 'virtuals': true }
 });
 
 eventSchema.index({ 'location': '2dsphere' });
+
+eventSchema.virtual('placesLeft').get(function () {
+  if (this.capacity && this.attendees) {
+    return this.capacity - this.attendees.length;
+  }
+
+  return this.capacity;
+});
 
 const Event = mongoose.model('Event', eventSchema);
 

@@ -17,6 +17,7 @@ block content
           p 🕖 #{time}
           p 🍲 #{event.foodtype}
           p 💰 #{event.price} €
+          p Places left: #{event.placesLeft}
           form.form-attending(action='/event/'+event._id method='POST')
             if !userIsAttending && !userIsOwner
               button.button-attending I'm attending!

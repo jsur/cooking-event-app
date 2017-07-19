@@ -122,6 +122,7 @@ function renderEvents (events) {
         <p>Food type: ${event.foodtype}</p>
         <p>Price: ${event.price}</p>
         <p>Date: ${event.date.slice(0, 10)}</p>
+        <p>Places left: ${event.capacity - event.attendees.length}</p>
         <a href='/event/${event._id}'>Event details</a>
       </div>
     `);
