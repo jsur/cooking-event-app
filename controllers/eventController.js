@@ -2,7 +2,7 @@ const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
 const multer = require('multer');
-const upload = multer({ dest: '../public/uploads' });
+const upload = multer({ 'dest': '../public/uploads' });
 
 // With exports.something we don't need to use module.exports in the
 // end of the file

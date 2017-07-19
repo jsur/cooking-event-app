@@ -1,29 +1,30 @@
 extends layout
 
 block content
-  .container.newevent
-    .row
-      .six.columns
-        form(action="/newevent" method="POST" enctype="multipart/form-data")
-          h2 New Event
-          label(for="title") Title
-          input(type="text" name="title" placeholder="Name of your event" value=body ? body.title : '' required)
-          label(for="foodtype") Food type
-          input(type="text" name="foodtype" placeholder="What will you cook?" value=body ? body.foodtype : '' required)
-          label(for="capacity") Number of attendees
-          input(type="number" name="capacity" placeholder="0" value=body ? body.capacity : '' required )
-          label(for="price") Price per person
-          input(type="number" name="price" placeholder="0.00€" required )
-          label(for="description") Description
-          input(type="text" name="description" placeholder="Tell us a bit more...")
-          label(for="date") Date
-          input(type="date" name="day" value=body ? body.day : '' required)
-          label(for="time") Time
-          input(type="time" name="time" value=body ? body.time : '' required)
-          input(id="latitude" type="text" name="latitude" value=body ? body.latitude : '' hidden)
-          input(id="longitude" type="text" name="longitude" value=body ? body.longitude : '' hidden)
-          input(id="address" type="text" name="address" value=body ? body.address : '' hidden)
-          label(for="location") Location
-          input(id="location" type="text" name="location" value=body ? body.location : '' required)
-          input(type="file" name="image" required)
-          button.button-primary.button-signup Create event
+  form(action="/newevent" method="POST" enctype="multipart/form-data")
+    h2 New Event
+    .container.newevent-formcontainer
+      .newevent-col-1
+        label(for="title") Title
+        input(type="text" name="title" placeholder="Name of your event" required)
+        label(for="foodtype") Food type
+        input(type="text" name="foodtype" placeholder="What will you cook?" required)
+        label(for="capacity") Number of attendees
+        input(type="number" name="capacity" placeholder="0" required)
+        label(for="price") Price per person
+        input(type="number" name="price" placeholder="0.00€" required)
+      .newevent-col-2
+        label(for="date") Date
+        input(type="date" name="day" required)
+        label(for="time") Time
+        input(type="time" name="time" required)
+        input(id="latitude" type="text" name="latitude" hidden)
+        input(id="longitude" type="text" name="longitude" hidden)
+        input(id="address" type="text" name="address" hidden)
+        label(for="location") Location
+        input(id="location" type="text" name="location" required)
+        input(type="file" name="image" required)
+      .newevent-col-3
+        label(for="description") Description
+        input(type="textarea" rows="4" name="description" placeholder="Tell us a bit more...")
+        button.button-primary.button-signup Create event

@@ -195,6 +195,20 @@ nav li:last-of-type {
   margin-bottom: 100px;
 }
 
+.newevent-formcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.newevent-formcontainer input[type="text"],
+.newevent-formcontainer input[type="time"],
+.newevent-formcontainer input[type="number"],
+.newevent-formcontainer input[type="date"] {
+  max-width: 250px;
+}
+
+
+
 
 /* Mobile first queries */
 
@@ -225,6 +239,29 @@ nav li:last-of-type {
   .date-container {
     width: 50%;
   }
+
+  .newevent-formcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .newevent-col-1,
+  .newevent-col-2,
+  .newevent-col-3 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .newevent-col-1,
+  .newevent-col-2 {
+    width: 50%;
+  }
+
+  .newevent-col-3 {
+    width: 100%;
+  }
+
 }
 
 /* Larger than tablet */
