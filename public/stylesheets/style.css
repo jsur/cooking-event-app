@@ -41,12 +41,7 @@ nav li:last-of-type {
 }
 
 .frontpage-section-1 {
-  height: 50vh;
   text-align: center;
-}
-
-.frontpage-container-1 {
-  height: 50vh;
 }
 
 .frontpage-button {
@@ -175,7 +170,8 @@ nav li:last-of-type {
 
 .dashboard,
 .profile,
-.login {
+.login,
+.newevent {
   height: 100vh;
 }
 
@@ -239,4 +235,9 @@ nav li:last-of-type {
 @media (min-width: 1000px) {}
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .frontpage-section-1,
+  .frontpage-container-1 {
+    height: 50vh;
+  }
+}
