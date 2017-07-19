@@ -15,7 +15,11 @@ const userSchema = new Schema({
   'lastname': String,
   'events_attending': [{'type': Schema.Types.ObjectId, 'ref': 'Event'}],
   'events_hosting': [{'type': Schema.Types.ObjectId, 'ref': 'Event'}],
-  'preferences': [String]
+  'preferences': [String],
+  'image': {
+    'name': String,
+    'path': String
+  }
 }, {
   'timestamps': {
     'createdAt': 'created_at',

@@ -15,7 +15,11 @@ const users = [
     'password': 'password',
     'username': 'camille',
     'firstname': 'Camille',
-    'lastname': 'Smith'
+    'lastname': 'Smith',
+    'image': {
+      'name': '',
+      'path': ''
+    }
   },
   {
     'email': 'micaela@hotmail.com',

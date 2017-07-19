@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const multer = require('multer');
-const upload = multer({ dest: '../public/uploads/' });
+const upload = multer({ 'dest': '../public/uploads/' });
 // Here we require all controllers to use their exported methods
 // This way we can keep related functionalities in their own controllers
 const eventController = require('../controllers/eventController');
@@ -36,7 +36,7 @@ router.post('/event/:id', authController.checkAuth, catchErrors(eventController.
 router.post('/signup', authController.validateSignUpInfo, catchErrors(authController.makeNewUser));
 
 router.get('/profile', authController.checkAuth, catchErrors(userController.getUser));
-router.post('/profile', authController.checkAuth, catchErrors(userController.updateUser));
+router.post('/profile', authController.checkAuth, upload.single('image'), catchErrors(userController.updateUser));
 
 router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEvent));
 router.post('/editevent/:id', authController.checkAuth, catchErrors(eventController.editEvent));
