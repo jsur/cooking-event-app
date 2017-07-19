@@ -7,17 +7,17 @@ block content
         form(action="/newevent" method="POST")
           h2 New Event
           label(for="title") Title*
-          input(type="text" name="title" placeholder="Name of your event" value=body ? body.title : '' required)
+          input(type="text" name="title" placeholder="Name of your event" required)
           label(for="foodtype") Food type*
-          input(type="text" name="foodtype" placeholder="What will you cook?" value=body ? body.foodtype : '' required)
+          input(type="text" name="foodtype" placeholder="What will you cook?" required)
           label(for="price") Price per person
-          input(type="number" name="price" placeholder="0.00€" value=body ? body.price : '' required )
+          input(type="number" name="price" placeholder="0.00€" required )
           label(for="description") Description
-          input(type="text" name="description" placeholder="Tell us a bit more..." value=body ? body.description : '')
+          input(type="text" name="description" placeholder="Tell us a bit more...")
           label(for="date") Date
-          input(type="date" name="date" value=body ? body.date : '' required)
-          input(id="latitude" type="text" name="latitude" value=body ? body.latitude : '' hidden)
-          input(id="longitude" type="text" name="longitude" value=body ? body.longitude : '' hidden)
+          input(type="date" name="date" required)
+          input(id="latitude" type="text" name="latitude" hidden)
+          input(id="longitude" type="text" name="longitude" hidden)
           label(for="location") Location
-          input(id="location" type="text" name="location" value=body ? body.location : '' required)
+          input(id="location" type="text" name="location" required)
           button.button-primary.button-signup Create event
