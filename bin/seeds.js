@@ -327,3 +327,12 @@ Event.create(events, (err, docs) => {
   });
   mongoose.connection.close();
 });
+
+
+/*
+
+For updating a past event's attendees list in the shell:
+
+db.events.update({ _id: ObjectId("<PAST EVENT ID>") }, { $push: { attendees: ObjectId("USER ID") } } )
+
+*/
