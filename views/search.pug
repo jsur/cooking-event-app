@@ -8,13 +8,13 @@ block content
       #googlemap
     .eventcard-container.map-page
       .filterbar
-        .dateslider-container
-          span Date
-          #slider-date
-          #event-start
-          #event-end
+        .date-container
+          label.fromdate-label(for="fromdate") From
+          input(type="date" name="fromdate")
+          label.todate-label(for="todate") To
+          input(type="date" name="todate")
         .priceslider-container
-          span Price
+          p.price-p Price
           #slider-price
           #price-div-min
           #price-div-max
