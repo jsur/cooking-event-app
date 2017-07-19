@@ -14,7 +14,9 @@ block content
           input(type="text" name="description" placeholder="Tell us a bit more..." value= event.description : '')
           label(for="date") Date
           input(type="date" name="date" value= event.date : '' required)
-          input(id="address" type="text" name="address" value= event.address : '' hidden)
           label(for="location") Location
-          input(id="location" type="text" name="location" value= '' required)
+          input(id="location" type="text" name="location" value= event.address : '' required)
+          input(type="text" name="address" value= event.address : '' hidden)
+          input(type="text" name="latitude" value= event.latitude : '' hidden)
+          input(type="text" name="longitude" value= event.longitude : '' hidden)
           button.button-primary.button-signup Update event
