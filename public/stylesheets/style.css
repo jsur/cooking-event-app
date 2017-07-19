@@ -129,6 +129,11 @@ nav li:last-of-type {
   display: block;
 }
 
+.button-events {
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
 .staticmap {
   width: 100%;
   border-radius: 3px;
@@ -171,6 +176,11 @@ nav li:last-of-type {
 
 .attending-notice {
   color: #1fdd67;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: row;
 }
 
 .dashboard,
