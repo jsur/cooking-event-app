@@ -16,10 +16,14 @@ exports.getSearchPage = async (req, res, next) => {
 };
 
 exports.getDashboard = async (req, res, next) => {
-  const attendedEvents = await Event.find({ 'attendees': { '$in': [req.user.id] } }).where('date').lt(moment());
-  const hostedEvents = await Event.find({ 'owner': req.user.id });
+  // Guest
+  const attendedEvents = await Event.find({ 'attendees': { '$in': [req.user.id] } }).where('date').lt(moment()).limit(3);
+  const upcomingEvents = await Event.find({ 'attendees': { '$in': [req.user.id] } }).where('date').gt(moment());
+  // Host
+  const upcomingEventsHosted = await Event.find({ 'owner': { '$in': [req.user.id] } }).where('date').gt(moment());
+  const hostedEvents = await Event.find({ 'owner': { '$in': [req.user.id] } }).where('date').lt(moment());
 
-  res.render('dashboard', { attendedEvents, hostedEvents });
+  res.render('dashboard', { attendedEvents, upcomingEvents, upcomingEventsHosted, hostedEvents });
 };
 
 exports.getNewEventPage = async (req, res, next) => {

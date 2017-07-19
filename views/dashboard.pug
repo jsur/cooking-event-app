@@ -4,18 +4,29 @@ include mixins/eventCard
 
 block content
   .container.dashboard
-    .row
+    .dashboard-header
+      h1 Events
+      form(action="/search")
+        button.button-primary.button-events Browse all events
+    section.row
       .six.columns
-          h2 Attended events
+          h3 Upcoming events
+          if upcomingEvents
+            each event in upcomingEvents
+              +eventCard(event)
+      .six.columns
+        h3 Upcoming hosted
+        if upcomingEventsHosted
+          each event in upcomingEventsHosted
+            +eventCard(event)
+    section.row
+      .six.columns
+          h3 Attended
           if attendedEvents
             each event in attendedEvents
               +eventCard(event)
-          form(action="/search")
-            button.button-primary.button-login Browse events
       .six.columns
-          h2 Hosted events
-          if hostedEvents
-            each event in hostedEvents
-              +eventCard(event)
-          form(action="/newevent")
-            button.button-primary.button-signup Create a new event
+        h3 Hosted
+        if hostedEvents
+          each event in hostedEvents
+            +eventCard(event)
