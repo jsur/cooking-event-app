@@ -176,8 +176,13 @@ nav li:last-of-type {
 .dashboard,
 .profile,
 .login,
-.newevent {
+.newevent,
+.singleevent {
   height: 100vh;
+}
+
+.singleevent {
+  margin-bottom: 100px;
 }
 
 .footer {

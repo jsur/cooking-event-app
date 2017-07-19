@@ -254,6 +254,57 @@ const events = [
       'coordinates': [1.7750302332, 41.2363907211]
     },
     'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+  },
+  {
+    'owner': ['5968cb361ef39b7f80931bda'],
+    'title': 'Past event 1',
+    'foodtype': ['Brunch'],
+    'price': 55,
+    'description': 'Little Flute gives Barceloners the unique opportunity to experience the diversity of Prosecco and its sparkling peers with a carefully selected tasting menu and brunch inspired dishes. It is the first of its kind - a fun quality brunch experience with a sparkling twist. Little Flute’s menu takes the much-loved traditional brunch and adds flavours specifically chosen to enhance its relationship with sparkling wine. Our produce is seasonal, homemade and organic when possible to be so and our brunch dishes are intentionally light leaving room for the bubbles.',
+    'location': {
+      'type': 'Point',
+      'coordinates': [2.2014381, 41.3951386]
+    },
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '596e3b8c6dd82e14b11b6356'],
+    'date': '2017-06-01 11:00:00',
+    'image': {
+      'name': 'giant-brunch',
+      'path': '/uploads/giant-brunch.png'
+    }
+  },
+  {
+    'owner': ['5968cb361ef39b7f80931bda'],
+    'title': 'Past event 2',
+    'foodtype': ['Dinner'],
+    'price': 15,
+    'description': 'Little Flute gives Barceloners the unique opportunity to experience the diversity of Prosecco and its sparkling peers with a carefully selected tasting menu and brunch inspired dishes. It is the first of its kind - a fun quality brunch experience with a sparkling twist. Little Flute’s menu takes the much-loved traditional brunch and adds flavours specifically chosen to enhance its relationship with sparkling wine. Our produce is seasonal, homemade and organic when possible to be so and our brunch dishes are intentionally light leaving room for the bubbles.',
+    'location': {
+      'type': 'Point',
+      'coordinates': [2.2014381, 41.3951386]
+    },
+    'attendees': ['5968cad1a172577f721e7361', '596e3b8c6dd82e14b11b6356', '5968cad1a172577f721e735f'],
+    'date': '2017-07-01 11:00:00',
+    'image': {
+      'name': 'giant-brunch',
+      'path': '/uploads/giant-brunch.png'
+    }
+  },
+  {
+    'owner': ['5968cb361ef39b7f80931bda'],
+    'title': 'Past event 3',
+    'foodtype': ['Breakfast'],
+    'price': 29,
+    'description': 'Little Flute gives Barceloners the unique opportunity to experience the diversity of Prosecco and its sparkling peers with a carefully selected tasting menu and brunch inspired dishes. It is the first of its kind - a fun quality brunch experience with a sparkling twist. Little Flute’s menu takes the much-loved traditional brunch and adds flavours specifically chosen to enhance its relationship with sparkling wine. Our produce is seasonal, homemade and organic when possible to be so and our brunch dishes are intentionally light leaving room for the bubbles.',
+    'location': {
+      'type': 'Point',
+      'coordinates': [2.2014381, 41.3951386]
+    },
+    'attendees': ['596e3b8c6dd82e14b11b6356', '5968cad1a172577f721e735e', '5968cad1a172577f721e735f'],
+    'date': '2017-05-02 11:00:00',
+    'image': {
+      'name': 'giant-brunch',
+      'path': '/uploads/giant-brunch.png'
+    }
   }
 ];
 

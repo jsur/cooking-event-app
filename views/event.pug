@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .container
+  .container.singleevent
     .twelve.columns
       img.staticmap(src=helpers.staticMap(event.location.coordinates))
     h2= event.title
