@@ -1,6 +1,6 @@
 // Here we can utilize our API routes with axios
 
-let map;
+let map = '';
 let markers = [];
 const mapDiv = document.getElementById('googlemap');
 const mapOptions = {
@@ -8,26 +8,22 @@ const mapOptions = {
   'zoom': 12
 };
 
+// Default values for loadPlaceOpts object
+const currentdate = new Date().toJSON().slice(0, 10).replace(/-/g, '-');
+const twoyearsahead = currentdate.replace(currentdate.slice(0, 4), '2019');
+
 const loadPlaceOpts = {
   'minprice': 0,
   'maxprice': 500,
-  'fromdate': Date.now(),
-  'todate': new Date().setFullYear(new Date().getFullYear() + 2)
+  'fromdate': currentdate,
+  'todate': twoyearsahead
 };
 
 const filterHandles = document.querySelectorAll('.noUi-handle');
 filterHandles.forEach((handle) => {
   handle.addEventListener('mouseup', () => {
 
-    currentHandleValue = parseInt($(handle).attr('aria-valuetext'), 10);
-
-    if ($(handle).parents('div#slider-date').length > 0) {
-      if ($(handle).hasClass('noUi-handle-lower')) {
-        loadPlaceOpts.fromdate = $(handle).attr('aria-valuetext');
-      } else {
-        loadPlaceOpts.todate = $(handle).attr('aria-valuetext');
-      }
-    }
+    const currentHandleValue = $(handle).attr('aria-valuetext');
 
     if ($(handle).parents('div#slider-price').length > 0) {
       if ($(handle).hasClass('noUi-handle-lower')) {
@@ -38,6 +34,20 @@ filterHandles.forEach((handle) => {
     }
 
     loadPlaces(map, map.center.lat(), map.center.lng(), loadPlaceOpts);
+  });
+});
+
+const dateInputs = document.querySelectorAll('.date-input');
+dateInputs.forEach((input) => {
+  input.addEventListener('change', () => {
+    const fromdate = document.getElementById('fromdate').value;
+    const todate = document.getElementById('todate').value;
+
+    loadPlaceOpts.fromdate = fromdate ? fromdate : loadPlaceOpts.fromdate;
+    loadPlaceOpts.todate = todate ? todate : loadPlaceOpts.todate;
+
+    loadPlaces(map, map.center.lat(), map.center.lng(), loadPlaceOpts);
+
   });
 });
 

@@ -15,8 +15,9 @@ exports.getSearchPage = async (req, res, next) => {
 };
 
 exports.getDashboard = async (req, res, next) => {
-  const attendedEvents = await Event.find({ 'attendees': req.user.id }).limit(3);
-  const hostedEvents = await Event.find({ 'owner': req.user.id }).limit(3);
+  const attendedEvents = await Event.find({ 'attendees': { '$in': [req.user.id] } }).where('date').lt(moment()).limit(3);
+  const hostedEvents = await Event.find({ 'owner': req.user.id });
+
   res.render('dashboard', { attendedEvents, hostedEvents });
 };
 
@@ -25,9 +26,6 @@ exports.getNewEventPage = async (req, res, next) => {
 };
 
 exports.getEventsNearCoordinate = async (req, res, next) => {
-
-  const mindate = moment(parseInt(req.query.fromdate, 10));
-  const maxdate = moment(parseInt(req.query.todate, 10));
 
   const events = await Event.find({
     'location': {
@@ -43,7 +41,7 @@ exports.getEventsNearCoordinate = async (req, res, next) => {
     }
   })
     .where('price').gte(req.query.minprice).lte(req.query.maxprice)
-    .where('date').gte(mindate).lte(maxdate);
+    .where('date').gte(req.query.fromdate).lte(req.query.todate);
 
   res.json(events);
 };
