@@ -12,4 +12,7 @@ autocomplete.addListener('place_changed', function() {
   $("#latitude").val(place.geometry.location.lat());
   $("#longitude").val(place.geometry.location.lng());
   $("#address").val(place.formatted_address)
+  console.log(place.geometry.location.lat());
+  console.log(place.geometry.location.lng());
+  console.log(place.formatted_address);
 });

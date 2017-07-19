@@ -108,8 +108,8 @@ exports.editEvent = async (req, res, next) => {
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
-  
-  const updatedEvent = await Event.findByIdAndUpdate(req.params.id, { eventInfo });
+  console.log(eventInfo);
+  const updatedEvent = await Event.findByIdAndUpdate(req.params.id, eventInfo);
   req.flash('success', `${updatedEvent.title} has been updated.`);
   res.redirect('/dashboard');
 };
@@ -130,7 +130,6 @@ exports.makeNewEvent = async (req, res, next) => {
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
-  console.log(eventInfo);
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
   req.flash('success', `Event ${event.title} created!`);
