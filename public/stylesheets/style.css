@@ -195,23 +195,6 @@ nav li:last-of-type {
   margin-bottom: 100px;
 }
 
-.footer {
-  background-color: none;
-  color: black;
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-.footer-col {
-  text-align: center;
-}
-
-.footer-col p {
-  margin: 0;
-}
-
 
 /* Mobile first queries */
 
@@ -275,7 +258,7 @@ nav li:last-of-type {
 @media (min-width: 1200px) {
   .frontpage-section-1,
   .frontpage-container-1 {
-    height: 50vh;
+    height: 40vh;
   }
   .filterbar {
     flex-direction: row;
