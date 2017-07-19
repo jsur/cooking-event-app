@@ -8,7 +8,7 @@ const upload = multer({ 'dest': './public/uploads' });
 // end of the file
 exports.getMainPage = async (req, res, next) => {
   // Await that Event.find is ready, then render
-  const events = await Event.find().limit(6);
+  const events = await Event.find().sort({ 'created_at': -1 }).limit(6);
   res.render('main', { events });
 };
 
