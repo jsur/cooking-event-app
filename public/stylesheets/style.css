@@ -177,9 +177,9 @@ nav li:last-of-type {
 }
 
 .footer {
-  background-color: black;
-  color: white;
-  height: 70px;
+  background-color: none;
+  color: black;
+  height: 50px;
   width: 100%;
   position: absolute;
   bottom: 0;

@@ -13,6 +13,7 @@ const eventSchema = new Schema({
     'default': Date.now
   },
   'location': { 'type': { 'type': String }, 'coordinates': [Number] },
+  'address': String,
   'attendees': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
   'image': {
     'name': String,

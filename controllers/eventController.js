@@ -107,6 +107,7 @@ exports.editEvent = async (req, res, next) => {
     'capacity': req.body.capacity,
     'date': req.body.date,
     'description': req.body.description,
+    // 'location': req.body.latitude
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
 
@@ -128,6 +129,7 @@ exports.makeNewEvent = async (req, res, next) => {
     'price': req.body.price,
     'description': req.body.description,
     'date': req.body.date,
+    'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
 
