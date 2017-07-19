@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const multer = require('multer');
-const upload = multer({ 'dest': '../public/uploads/' });
+const upload = multer({ 'dest': '../public/uploads' });
 
 
 exports.getUser = async (req, res, next) => {

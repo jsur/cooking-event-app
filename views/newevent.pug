@@ -17,7 +17,9 @@ block content
           label(for="description") Description
           input(type="text" name="description" placeholder="Tell us a bit more...")
           label(for="date") Date
-          input(type="date" name="date" value=body ? body.date : '' required)
+          input(type="date" name="day" value=body ? body.day : '' required)
+          label(for="time") Time
+          input(type="time" name="time" value=body ? body.time : '' required)
           input(id="latitude" type="text" name="latitude" value=body ? body.latitude : '' hidden)
           input(id="longitude" type="text" name="longitude" value=body ? body.longitude : '' hidden)
           input(id="address" type="text" name="address" value=body ? body.address : '' hidden)
