@@ -108,13 +108,7 @@ exports.editEvent = async (req, res, next) => {
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
-<<<<<<< HEAD
-  console.log(eventInfo);
   const updatedEvent = await Event.findByIdAndUpdate(req.params.id, eventInfo);
-=======
-
-  const updatedEvent = await Event.findByIdAndUpdate(req.params.id, { eventInfo });
->>>>>>> f7bbbbbc62a63e2180f3855eaaf202992bde2543
   req.flash('success', `${updatedEvent.title} has been updated.`);
   res.redirect('/dashboard');
 };
