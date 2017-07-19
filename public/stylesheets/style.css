@@ -20,8 +20,9 @@ nav {
 
 nav li {
   display: inline;
-  margin: 15px;
+  margin: 10px;
   float: left;
+  font-size: 1.3rem;
 }
 
 nav li:last-of-type {
@@ -41,12 +42,7 @@ nav li:last-of-type {
 }
 
 .frontpage-section-1 {
-  height: 50vh;
   text-align: center;
-}
-
-.frontpage-container-1 {
-  height: 50vh;
 }
 
 .frontpage-button {
@@ -97,7 +93,7 @@ nav li:last-of-type {
 .eventcard {
   min-width: 25%;
   border: 1px solid grey;
-  width: 300px;
+  width: 250px;
   height: 150px;
   margin: 1rem;
   padding: 10px;
@@ -175,7 +171,8 @@ nav li:last-of-type {
 
 .dashboard,
 .profile,
-.login {
+.login,
+.newevent {
   height: 100vh;
 }
 
@@ -202,7 +199,7 @@ nav li:last-of-type {
 /* Larger than mobile */
 @media (min-width: 400px) {
   nav li {
-    margin: 20px;
+    margin: 15px;
   }
   .frontpage-button {
     margin-top: 2rem;
@@ -213,6 +210,10 @@ nav li:last-of-type {
 @media (min-width: 550px) {
   .map {
     height: 100vh;
+  }
+  nav li {
+    margin: 20px;
+    font-size: inherit;
   }
 }
 
@@ -239,4 +240,9 @@ nav li:last-of-type {
 @media (min-width: 1000px) {}
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .frontpage-section-1,
+  .frontpage-container-1 {
+    height: 50vh;
+  }
+}
