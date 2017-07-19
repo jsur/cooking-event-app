@@ -5,6 +5,7 @@ const eventSchema = new Schema({
   'owner': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
   'title': String,
   'foodtype': [String],
+  'capacity': Number,
   'price': Number,
   'description': String,
   'date': {
@@ -12,6 +13,7 @@ const eventSchema = new Schema({
     'default': Date.now
   },
   'location': { 'type': { 'type': String }, 'coordinates': [Number] },
+  'address': String,
   'attendees': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
   'image': {
     'name': String,
