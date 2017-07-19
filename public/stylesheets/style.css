@@ -20,8 +20,9 @@ nav {
 
 nav li {
   display: inline;
-  margin: 15px;
+  margin: 10px;
   float: left;
+  font-size: 1.3rem;
 }
 
 nav li:last-of-type {
@@ -198,7 +199,7 @@ nav li:last-of-type {
 /* Larger than mobile */
 @media (min-width: 400px) {
   nav li {
-    margin: 20px;
+    margin: 15px;
   }
   .frontpage-button {
     margin-top: 2rem;
@@ -209,6 +210,10 @@ nav li:last-of-type {
 @media (min-width: 550px) {
   .map {
     height: 100vh;
+  }
+  nav li {
+    margin: 20px;
+    font-size: inherit;
   }
 }
 
