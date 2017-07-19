@@ -1,10 +1,17 @@
+html {
+
+}
+
 html,
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
   position: relative;
+  min-height: 100%;
 }
 
 nav {
@@ -36,6 +43,10 @@ nav li:last-of-type {
 .frontpage-section-1 {
   height: 50vh;
   text-align: center;
+}
+
+.frontpage-container-1 {
+  height: 50vh;
 }
 
 .frontpage-button {
@@ -160,6 +171,12 @@ nav li:last-of-type {
 
 .attending-notice {
   color: #1fdd67;
+}
+
+.dashboard,
+.profile,
+.login {
+  height: 100vh;
 }
 
 .footer {
