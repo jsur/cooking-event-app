@@ -2,8 +2,7 @@ const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 const User = require('../models/User');
 const multer = require('multer');
-const upload = multer({ dest: '../public/uploads/' });
-
+const upload = multer({ 'dest': '../public/uploads/' });
 
 // No need to add error handling, route is wrapped with catchErrors() in index.js
 exports.makeNewUser = async (req, res, next) => {

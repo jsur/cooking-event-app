@@ -114,9 +114,16 @@ exports.editEvent = async (req, res, next) => {
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
+
   const updatedEvent = await Event.findByIdAndUpdate(req.params.id, eventInfo);
-  req.flash('success', `${updatedEvent.title} has been updated.`);
-  res.redirect('/dashboard');
+
+  if (updatedEvent.capacity < updatedEvent.attendees.length) {
+    req.flash('error', `This event already has ${updatedEvent.attendees.length} guests attending, increase number of attendees to at least that.`);
+    res.redirect(`/editevent/${updatedEvent._id}`);
+  } else {
+    req.flash('success', `${updatedEvent.title} has been updated.`);
+    res.redirect('/dashboard');
+  }
 };
 
 exports.makeNewEvent = async (req, res, next) => {
