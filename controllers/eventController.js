@@ -1,6 +1,7 @@
 const Event = require('../models/Event');
 const User = require('../models/User');
 const moment = require('moment');
+const multer = require('multer');
 
 // With exports.something we don't need to use module.exports in the
 // end of the file
@@ -128,6 +129,7 @@ exports.makeNewEvent = async (req, res, next) => {
     'date': req.body.date,
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
+    'image': {'name': req.body.image}
   };
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
