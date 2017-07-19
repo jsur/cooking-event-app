@@ -145,8 +145,7 @@ exports.makeNewEvent = async (req, res, next) => {
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]},
     'image': {'name': req.file.filename, 'path': `/uploads/${req.file.filename}`}
   };
-  console.log(eventInfo);
-  console.log(req.file);
+
   const newEvent = new Event(eventInfo);
   const event = await newEvent.save();
   req.flash('success', `Event ${event.title} created!`);

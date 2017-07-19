@@ -207,6 +207,12 @@ nav li:last-of-type {
   max-width: 250px;
 }
 
+.newevent-h2-container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
 
 
 
@@ -238,6 +244,10 @@ nav li:last-of-type {
   .priceslider-container,
   .date-container {
     width: 50%;
+  }
+
+  .newevent-h2-container {
+    width: 80%;
   }
 
   .newevent-formcontainer {

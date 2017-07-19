@@ -2,7 +2,8 @@ extends layout
 
 block content
   form(action="/newevent" method="POST" enctype="multipart/form-data")
-    h2 New Event
+    .newevent-h2-container
+      h2.newevent-h2 New Event
     .container.newevent-formcontainer
       .newevent-col-1
         label(for="title") Title
@@ -26,5 +27,5 @@ block content
         input(type="file" name="image" required)
       .newevent-col-3
         label(for="description") Description
-        input(type="textarea" rows="4" name="description" placeholder="Tell us a bit more...")
+        textarea(rows="8" cols="150" name="description" placeholder="Tell us a bit more...")
         button.button-primary.button-signup Create event
