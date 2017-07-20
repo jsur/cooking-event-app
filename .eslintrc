@@ -72,7 +72,6 @@
       "lines-around-directive": "error",
       "max-depth": "error",
       "max-nested-callbacks": "error",
-      "max-statements": "error",
       "max-statements-per-line": "error",
       "new-parens": "error",
       "newline-before-return": "error",
