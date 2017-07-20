@@ -1,5 +1,7 @@
 extends layout
 
+include mixins/reviewCard
+
 block content
   .container.singleevent
     .twelve.columns
@@ -11,7 +13,9 @@ block content
       .four.columns.attendevent
         aside.eventdetails
           h3= event.title
-          if userIsAttending
+          if event.isPastEvent
+            p.past-notice This event is in the past!
+          if userIsAttending && !event.isPastEvent
             p.attending-notice You are attending this event!
           p 📅 #{date}
           p 🕖 #{time}
@@ -19,9 +23,9 @@ block content
           p 💰 #{event.price} €
           p Places left: #{event.placesLeft}
           form.form-attending(action='/event/'+event._id method='POST')
-            if !userIsAttending && !userIsOwner
+            if !userIsAttending && !userIsOwner && !event.isPastEvent
               button.button-attending I'm attending!
-            if userIsAttending
+            if userIsAttending && !event.isPastEvent
               button.button-cancel Cancel attendance
           form.form-attending(action='/editevent/'+event._id method='GET')
             if userIsOwner
@@ -29,3 +33,20 @@ block content
               button.button-delete Cancel this event
           button.button-eventdescription Read description 👇
           p.p-eventdescription= event.description
+    .twelve.columns
+      .reviews
+        h4 Host reviews
+        if reviews
+          each review in reviews
+            +reviewCard(review)
+    if event.isPastEvent
+      .twelve.columns
+        .new-review
+          h4 You attended this event. Leave a review for the host?
+          form.review-form(action='/review/'+event.owner[0] method="POST")
+            label(for="description") Review
+            textarea.review-description(name="description" required)
+            label.review-rating-label(for="rating") Rating (1 to 5)
+            input(type="number" min="1" max="5" name="rating" required)
+            button.review-save Save
+          

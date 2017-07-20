@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const moment = require('moment');
 
 const eventSchema = new Schema({
   'owner': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
@@ -37,6 +38,14 @@ eventSchema.virtual('placesLeft').get(function () {
   }
 
   return this.capacity;
+});
+
+eventSchema.virtual('isPastEvent').get(function () {
+  if (this.date < moment()) {
+    return true;
+  }
+
+  return false;
 });
 
 const Event = mongoose.model('Event', eventSchema);

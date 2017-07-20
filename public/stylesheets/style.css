@@ -188,6 +188,10 @@ nav li:last-of-type {
   color: #1fdd67;
 }
 
+.past-notice {
+  color: #ed4b4b;
+}
+
 .dashboard-header {
   display: flex;
   flex-direction: row;
@@ -310,6 +314,29 @@ nav li:last-of-type {
   .eventimg {
     height: 500px;
   }
+}
+
+/* Review styles */
+
+.review-description {
+  width: 40%;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.review-form label {
+  margin-right: 10px;
+}
+
+.review-rating-label {
+  margin-left: 10px;
+}
+
+.review-save {
+  margin-left: 10px;
 }
 
 /* Larger than desktop */

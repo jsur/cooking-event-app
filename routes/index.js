@@ -8,6 +8,7 @@ const upload = multer({ dest: './public/uploads/' });
 const eventController = require('../controllers/eventController');
 const authController = require('../controllers/authController');
 const userController = require('../controllers/userController');
+const reviewController = require('../controllers/reviewController');
 // ES6 Object destructuring
 const {catchErrors} = require('../handlers/errorHandlers');
 
@@ -40,6 +41,8 @@ router.post('/profile', authController.checkAuth, upload.single('image'), catchE
 
 router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEvent));
 router.post('/editevent/:id', authController.checkAuth, catchErrors(eventController.editEvent));
+
+router.post('/review/:id', authController.checkAuth, catchErrors(reviewController.leaveReview));
 
 router.get('/logout', (req, res) => {
   req.logout();
