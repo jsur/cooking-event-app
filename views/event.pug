@@ -5,7 +5,7 @@ include mixins/reviewCard
 block content
   .container.singleevent
     h5.event-name #{event.title}
-    h5 #{date} #{time} #{event.foodtype} #{event.price} €
+    h5 #{date} - #{time} - #{event.foodtype} - #{event.price}€
     .row.event-row
       .eight.columns
         img.eventimg(src=event.image.path)
