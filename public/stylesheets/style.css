@@ -61,6 +61,14 @@ button {
   margin-top: 20px;
 }
 
+.frontpage-new-events {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
 .header-h2 {
   color: red;
 }
@@ -74,12 +82,17 @@ button {
 }
 
 .frontpage-section-1 {
-  text-align: center;
-  background-image: url('')
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/img/mainimg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh;
 }
 
 .frontpage-button {
-  margin-top: 2rem;
   background-color: #937b57;
   color: black;
 }
@@ -357,9 +370,7 @@ button {
   nav li {
     margin: 15px;
   }
-  .frontpage-button {
-    margin-top: 2rem;
-  }
+
   .event-card-image {
     width: 120px;
     height: 80px;
