@@ -157,7 +157,6 @@
       "operator-assignment": "error",
       "operator-linebreak": "error",
       "padded-blocks": "off",
-      "prefer-arrow-callback": "error",
       "prefer-const": "error",
       "prefer-numeric-literals": "error",
       "prefer-reflect": "error",

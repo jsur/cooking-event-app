@@ -4,39 +4,38 @@ include mixins/reviewCard
 
 block content
   .container.singleevent
-    .twelve.columns
-      img.staticmap(src=helpers.staticMap(event.location.coordinates))
-    h2= event.title
+    h5 #{date} #{time} #{event.foodtype} #{event.price} €
     .row.event-row
       .eight.columns
         img.eventimg(src=event.image.path)
       .four.columns.attendevent
         aside.eventdetails
-          h4 Host: #{ownerFullname}
+          h5.event-name #{event.title}
+          h5.event-host Host: #{ownerFullname}
           if event.isPastEvent
             p.past-notice This event is in the past!
           if userIsAttending && !event.isPastEvent
             p.attending-notice You are attending this event!
-          p 📅 #{date}
-          p 🕖 #{time}
-          p 🍲 #{event.foodtype}
-          p 💰 #{event.price} €
-          p Places left: #{event.placesLeft}
-          form.form-attending(action='/event/'+event._id method='POST')
-            if !userIsAttending && !userIsOwner && !event.isPastEvent
-              button.button-attending I'm attending!
-            if userIsAttending && !event.isPastEvent
-              button.button-cancel Cancel attendance
-            if userIsOwner
-          form.form-attending(action='/editevent/'+event._id method='GET')
-              button.button-edit Edit this event
-          form.form-attending(action='/editevent/'+event._id+'/delete' method='POST')
-              button.button-delete Cancel this event
-          button.button-eventdescription Read description 👇
+          p.placesleft Places left: #{event.placesLeft}
           p.p-eventdescription= event.description
+    .event-button-container
+      form.form-attending(action='/event/'+event._id method='POST')
+        if !userIsAttending && !userIsOwner && !event.isPastEvent
+          button.button-attending I'm attending!
+        if userIsAttending && !event.isPastEvent
+          button.button-cancel Cancel attendance
+        if userIsOwner
+      form.form-attending(action='/editevent/'+event._id method='GET')
+        if userIsOwner
+          button.button-edit Edit this event
+      form.form-attending(action='/editevent/'+event._id+'/delete' method='POST')
+        if userIsOwner
+          button.button-delete Cancel this event
+    .twelve.columns
+      img.staticmap(src=helpers.staticMap(event.location.coordinates))
     .twelve.columns
       .reviews
-        h4 Host reviews
+        h4 What people think of the host:
         if reviews.length === 0
           p This host does not have any reviews.
         if reviews

@@ -31,6 +31,10 @@ nav li:last-of-type {
   float: right;
 }
 
+button {
+  border-radius: 0;
+}
+
 .newevent-main-li {
   display: none;
 }
@@ -187,7 +191,6 @@ nav li:last-of-type {
 .eventimg {
   width: 100%;
   height: 280px;
-  border: 1px solid black;
 }
 
 .eventdetails p {
@@ -199,8 +202,16 @@ nav li:last-of-type {
   padding: 0;
 }
 
+.event-button-container {
+  text-align: center;
+}
+
+.event-button-container button {
+  width: 100%;
+}
+
 .p-eventdescription {
-  display: none;
+  margin-top: 10px;
 }
 
 .form-attending {
@@ -208,7 +219,7 @@ nav li:last-of-type {
 }
 
 .button-attending {
-  background: #1fdd67;
+  background: #a58d6a;
   color: black;
   margin-top: 10px;
 }
@@ -242,6 +253,16 @@ nav li:last-of-type {
 
 .singleevent {
   margin-bottom: 100px;
+}
+
+.event-name,
+.event-host {
+  margin: 0;
+}
+
+.placesleft {
+  color: #107175;
+  font-weight: bold;
 }
 
 .newevent-formcontainer {
@@ -361,6 +382,9 @@ nav li:last-of-type {
     overflow: hidden;
     display: block;
   }
+  .event-button-container button {
+    width: 65%;
+  }
 }
 
 /* Larger than tablet */
@@ -429,8 +453,7 @@ nav li:last-of-type {
 .reviewcard {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid #937b57;
   padding: 10px;
   width: 90%;
 }
