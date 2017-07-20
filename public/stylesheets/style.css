@@ -11,7 +11,7 @@ body {
 }
 
 nav {
-  height: 100px;
+  height: 60px;
 }
 
 nav li {
@@ -19,6 +19,10 @@ nav li {
   margin: 10px;
   float: left;
   font-size: 1.2rem;
+	font-weight: 600;
+	letter-spacing: 0.2px;
+	color: #07111f;
+
 }
 
 nav li a {
@@ -85,6 +89,22 @@ button {
   color: black;
 }
 
+/* SEARCH PAGE */
+
+.search-title {
+  font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	color: #000000;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.search-container {
+  border-top: solid 1px #107175;
+}
+
 #mapevents,
 .eventcard-container-main {
   display: flex;
@@ -103,13 +123,13 @@ button {
 }
 
 .date-container {
-  width: 30%;
+  min-width: 240px;
   display: block;
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   color: #107175;
-  border: solid 1px #107175;
+  border: solid 2px #107175;
   margin-right: 60px;
   margin-bottom: 10px;
   padding: 5px;
@@ -122,18 +142,32 @@ button {
 }
 
 .date-container input {
-  width: 200px;
   margin: 0;
 
 }
 
 .priceslider-container {
+  min-width: 240px;
+  display: block;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #107175;
+  border: solid 2px #107175;
+  margin-right: 60px;
   margin-bottom: 10px;
+  padding: 5px;
+  padding-left: 20px;
+
 }
 
 .price-p {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-weight: bold;
+}
+
+#price {
+  margin-top: 7px;
 }
 
 .fromdate-label,
@@ -193,7 +227,8 @@ button {
 }
 
 .map {
-  margin: 0;
+  margin: 15px;
+  padding-top: 10px;
   height: 60vh;
 }
 
@@ -203,7 +238,7 @@ button {
 }
 
 .eventcard-container.map-page {
-  margin: 0;
+  margin: 15px;
   overflow-y: auto;
 }
 
@@ -372,7 +407,7 @@ button {
   }
   .priceslider-container,
   .date-container {
-    width: 50%;
+    width: 40%;
   }
 
   .newevent-h2-container {
@@ -547,6 +582,6 @@ button {
   }
   .priceslider-container,
   .date-container {
-    width: 50%;
+    width: 40%;
   }
 }
