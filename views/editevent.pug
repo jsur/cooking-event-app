@@ -1,24 +1,27 @@
 extends layout
 
 block content
-  .container
-    .row
-      .six.columns
-        form(action='/editevent/'+event._id method="POST")
-          h2 Edit Event
-          label(for="title") Title
-          input(type="text" name="title" placeholder="Name of your event" value= event.title : '' required)
-          label(for="capacity") Number of attendees
-          input(type="number" name="capacity" placeholder="0" value= event.capacity : '' required )
-          label(for="description") Description
-          input(type="text" name="description" placeholder="Tell us a bit more..." value= event.description : '')
-          label(for="date") Date
-          input(type="date" name="day" value= day required)
-          label(for="time") Date
-          input(type="time" name="time" value= time : '' required)
-          label(for="location") Location
-          input(id="location" type="text" name="location" value= event.address : '' required)
-          input(id="address" type="text" name="address" value= event.address : '' hidden)
-          input(id="latitude" type="text" name="latitude" value= event.location.coordinates[1] : '' hidden)
-          input(id="longitude" type="text" name="longitude" value= event.location.coordinates[0] : '' hidden)
-          button.button-primary.button-signup Update event
+  form(action='/editevent/'+event._id method="POST" enctype="multipart/form-data")
+    .newevent-h2-container
+      h2.newevent-h2 Edit Event
+    .container.newevent-formcontainer
+      .newevent-col-1
+        label(for="title") Title
+        input(type="text" name="title" placeholder="Name of your event" value= event.title : '' required)
+        label(for="capacity") Number of attendees
+        input(type="number" name="capacity" placeholder="0" value= event.capacity : '' required )
+        label(for="date") Date
+        input(type="date" name="day" value= day required)
+        label(for="time") Time
+        input(type="time" name="time" value= time : '' required)
+      .newevent-col-2
+        label(for="location") Location
+        input(id="location" type="text" name="location" value= event.address : '' required)
+        label(for="description") Description
+        input(id="update-description" type="text" name="description" placeholder="Tell us a bit more..." value= event.description : '')
+        //- img.updateeventimg(src=event.image.path)
+        input(type="file" name="image")
+        input(id="address" type="text" name="address" value= event.address : '' hidden)
+        input(id="latitude" type="text" name="latitude" value= event.location.coordinates[1] : '' hidden)
+        input(id="longitude" type="text" name="longitude" value= event.location.coordinates[0] : '' hidden)
+        button.button-primary.button-signup Update event
