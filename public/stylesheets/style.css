@@ -27,6 +27,10 @@ nav li a {
   font-weight: bold;
 }
 
+nav li a:hover {
+  color: #937b57;
+}
+
 nav li:last-of-type {
   float: right;
 }
@@ -37,6 +41,24 @@ button {
 
 .newevent-main-li {
   display: none;
+}
+
+.mainpage-img-container {
+  width: 100%;
+  height: 70px;
+  display: block;
+}
+
+.main-page-img {
+  margin: 0 auto;
+  width: 170px;
+  height: 70px;
+  display: block;
+}
+
+.main-page-p {
+  display: block;
+  margin-top: 20px;
 }
 
 .header-h2 {
@@ -53,10 +75,13 @@ button {
 
 .frontpage-section-1 {
   text-align: center;
+  background-image: url('')
 }
 
 .frontpage-button {
   margin-top: 2rem;
+  background-color: #937b57;
+  color: black;
 }
 
 #mapevents,
@@ -138,7 +163,8 @@ button {
   display: inline-block;
 }
 
-.event-title {
+.event-title,
+.main-page-p {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
@@ -285,8 +311,47 @@ button {
 
 .updateeventimg {
   width: 50%;
+
+/* Review styles */
+
+.review-form {
+  display: flex;
+  flex-direction: column;
 }
 
+.review-form label {
+  margin-right: 10px;
+}
+
+.review-rating-label {
+  margin-left: 10px;
+}
+
+.reviewcard {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #937b57;
+  padding: 10px;
+  width: 90%;
+}
+
+.reviewer {
+  font-weight: bold;
+  margin-right: 120px;
+}
+
+.review-p-rating {
+  font-weight: bold;
+>>>>>>> a6c5410552f8b14dd006e91bdc5aed22edfb5b87
+}
+
+.review-p-description {
+  margin: 0;
+}
+
+.new-review {
+  margin-top: 10px;
+}
 
 
 /* Mobile first queries */
@@ -315,8 +380,8 @@ button {
     overflow: hidden;
     display: inline-block;
   }
-}
 
+}
 
 
 /* Larger than phablet */
@@ -425,55 +490,21 @@ button {
     overflow: hidden;
     display: inline-block;
   }
-}
 
-/* Review styles */
+  .mainpage-img-container img {
+    float: left;
+  }
 
-.review-description {
-  width: 100%;
-}
+  .main-page-p {
+    text-align: left;
+    margin-left: 30px;
+    font-size: 34px;
+  }
 
-.review-form {
-  display: flex;
-  flex-direction: column;
-}
+  .mainpage-img-container {
+    margin-left: 20px;
+  }
 
-.review-form label {
-  margin-right: 10px;
-}
-
-.review-rating-label {
-  margin-left: 10px;
-}
-
-.review-save {
-  margin-left: 10px;
-}
-
-.reviewcard {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid #937b57;
-  padding: 10px;
-  width: 90%;
-}
-
-.reviewer {
-  font-weight: bold;
-  margin-right: 120px;
-}
-
-.review-p-rating {
-  font-weight: bold;
-}
-
-.review-p-description {
-  width: 100%;
-  margin: 0;
-}
-
-.new-review {
-  margin-top: 10px;
 }
 
 /* Larger than desktop */
@@ -490,6 +521,10 @@ button {
 
   .reviewcard {
     width: 70%;
+  }
+
+  .review-save {
+    margin-left: 10px;
   }
 }
 

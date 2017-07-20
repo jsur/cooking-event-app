@@ -19,7 +19,7 @@ block content
         input(id="location" type="text" name="location" value= event.address : '' required)
         label(for="description") Description
         input(id="update-description" type="text" name="description" placeholder="Tell us a bit more..." value= event.description : '')
-        //- img.updateeventimg(src=event.image.path)
+        img.updateeventimg(src=event.image.path)
         input(type="file" name="image")
         input(id="address" type="text" name="address" value= event.address : '' hidden)
         input(id="latitude" type="text" name="latitude" value= event.location.coordinates[1] : '' hidden)

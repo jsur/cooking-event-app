@@ -92,7 +92,7 @@ const events = [
     'date': '2017-07-23 21:00:00',
     'image': {
       'name': 'club-lola',
-      'path': '/uploads/club-lola.png'
+      'path': '/uploads/pizza-night.jpg'
     }
   },
   {
@@ -223,7 +223,7 @@ const events = [
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
-    'title': 'Restaurant in Cairo, Egypt',
+    'title': 'Restaurant in Cairo',
     'foodtype': ['Egyptian'],
     'price': 120,
     'capacity': 9,
@@ -269,7 +269,12 @@ const events = [
       'type': 'Point',
       'coordinates': [1.7750302332, 41.2363907211]
     },
-    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360']
+    'attendees': ['5968cad1a172577f721e7361', '5968cad1a172577f721e735e', '5968cad1a172577f721e7360'],
+    'date': '2017-08-11 21:00:00',
+    'image': {
+      'name': 'madrid-eatz',
+      'path': '/uploads/madrid-eatz.png'
+    }
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],

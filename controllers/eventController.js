@@ -122,7 +122,8 @@ exports.editEvent = async (req, res, next) => {
     'date': req.body.day + ' ' + req.body.time,
     'description': req.body.description,
     'address': req.body.address,
-    'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
+    'location': {'type': 'Point', 'coordinates': [longitude, latitude]},
+    'image': {'name': req.file.filename, 'path': `/uploads/${req.file.filename}`}
   };
 
   const updatedEvent = await Event.findByIdAndUpdate(req.params.id, eventInfo);

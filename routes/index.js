@@ -40,7 +40,7 @@ router.get('/profile', authController.checkAuth, catchErrors(userController.getU
 router.post('/profile', authController.checkAuth, upload.single('image'), catchErrors(userController.updateUser));
 
 router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEditableEvent));
-router.post('/editevent/:id', authController.checkAuth, catchErrors(eventController.editEvent));
+router.post('/editevent/:id', upload.single('image'), authController.checkAuth, catchErrors(eventController.editEvent));
 router.post('/editevent/:id/delete', authController.checkAuth, catchErrors(eventController.deleteEvent));
 
 router.post('/review/:id', authController.checkAuth, catchErrors(reviewController.leaveReview));
