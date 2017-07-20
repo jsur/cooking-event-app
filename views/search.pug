@@ -4,19 +4,19 @@ include mixins/eventCard
 
 block content
   .search-container
-    .map
-      #googlemap
-    .eventcard-container.map-page
-      .filterbar
-        .date-container
-          label.fromdate-label(for="fromdate") From
-          input#fromdate.date-input(type="date" name="fromdate")
-          label.todate-label(for="todate") To
-          input#todate.date-input(type="date" name="todate")
-        .priceslider-container
-          p.price-p Price
-          #slider-price
-          #price-div-min
-          #price-div-max
-          #price
-      #mapevents
+    .filterbar
+      .date-container
+        label.fromdate-label(for="fromdate") From
+        input#fromdate.date-input(type="date" name="fromdate")
+        label.todate-label(for="todate") To
+        input#todate.date-input(type="date" name="todate")
+      .priceslider-container
+        p.price-p Price
+        #slider-price
+        #price-div-min
+        #price-div-max
+        #price
+    #mapevents
+      .map
+        #googlemap
+      .eventcard-container.map-page

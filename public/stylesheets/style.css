@@ -107,12 +107,20 @@ nav li:last-of-type {
 .eventcard {
   min-width: 25%;
   border: 1px solid grey;
-  width: 250px;
+  width: 350px;
   height: 150px;
   margin: 1rem;
   padding: 10px;
   box-sizing: border-box;
 }
+
+.event-title {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	color: #937b57;
+}
+
 
 .eventcard p {
   margin: 0;

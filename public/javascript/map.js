@@ -118,12 +118,12 @@ function renderEvents (events) {
 
     $(eventsContainer).append(`
       <div class="eventcard">
-        <p>Name: ${event.title}</p>
-        <p>Food type: ${event.foodtype}</p>
-        <p>Price: ${event.price}</p>
-        <p>Date: ${event.date.slice(0, 10)}</p>
-        <p>Places left: ${event.capacity - event.attendees.length}</p>
-        <a href='/event/${event._id}'>Event details</a>
+        <p class="event-title">${event.title}</p>
+        <p class="event-details">Food type: ${event.foodtype}</p>
+        <p class="event-details">Price: ${event.price}</p>
+        <p class="event-details">Date: ${event.date.slice(0, 10)}</p>
+        <p class="event-capacity-check">Places left: ${event.capacity - event.attendees.length}</p>
+        <a class="event-details-link" href='/event/${event._id}'>Event details</a>
       </div>
     `);
   });
