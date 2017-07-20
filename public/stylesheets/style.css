@@ -319,12 +319,12 @@ nav li:last-of-type {
 /* Review styles */
 
 .review-description {
-  width: 40%;
+  width: 100%;
 }
 
 .review-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .review-form label {
@@ -339,8 +339,48 @@ nav li:last-of-type {
   margin-left: 10px;
 }
 
+.reviewcard {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+}
+
+.reviewer {
+  font-weight: bold;
+  margin-right: 120px;
+}
+
+.review-p-rating {
+  font-weight: bold;
+}
+
+.review-p-description {
+  width: 100%;
+  margin: 0;
+}
+
+.new-review {
+  margin-top: 10px;
+}
+
 /* Larger than desktop */
 @media (min-width: 1000px) {
+
+  .review-form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .review-description {
+    width: 40%;
+  }
+
+  .reviewcard {
+    width: 70%;
+  }
 }
 
 /* Larger than Desktop HD */

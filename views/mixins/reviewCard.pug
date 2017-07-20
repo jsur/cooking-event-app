@@ -1,5 +1,5 @@
 mixin reviewCard(review = {})
   .reviewcard
-    p= review.author
-    p= review.description
-    p= review.rating
+    p.reviewer= review.authorname
+    p.review-p-rating Rating: #{review.rating}
+    p.review-p-description= review.description

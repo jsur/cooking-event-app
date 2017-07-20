@@ -36,10 +36,12 @@ block content
     .twelve.columns
       .reviews
         h4 Host reviews
+        if reviews.length === 0
+          p This host does not have any reviews.
         if reviews
           each review in reviews
             +reviewCard(review)
-    if event.isPastEvent
+    if event.isPastEvent && userIsAttending
       .twelve.columns
         .new-review
           h4 You attended this event. Leave a review for the host?
