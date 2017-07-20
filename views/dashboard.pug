@@ -3,30 +3,31 @@ extends layout
 include mixins/eventCard
 
 block content
-  .container.dashboard
     .dashboard-header
-      h2 Events
+      h2 Your events
       form(action="/search")
         button.button-primary.button-events Browse all events
-    section.row
-      .six.columns
-          h3 Upcoming events
+    .container.dashboard
+      .upcoming-container
+        div.upcoming-attending
+          h3 Upcoming events you are attending
           if upcomingEvents
             each event in upcomingEvents
               +eventCard(event)
-      .six.columns
-        h3 Upcoming hosted
-        if upcomingEventsHosted
-          each event in upcomingEventsHosted
-            +eventCard(event)
-    section.row
-      .six.columns
-          h3 Attended
+        div.upcoming-hosting
+          h3 Upcoming events you are hosting
+          if upcomingEventsHosted
+            each event in upcomingEventsHosted
+              +eventCard(event)
+              section.row
+      .past-container
+        div.past-attended
+          h3 Attended events
           if attendedEvents
             each event in attendedEvents
               +eventCard(event)
-      .six.columns
-        h3 Hosted
-        if hostedEvents
-          each event in hostedEvents
-            +eventCard(event)
+        div.past-hosted
+          h3 Hosted events
+          if hostedEvents
+            each event in hostedEvents
+              +eventCard(event)
