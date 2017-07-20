@@ -4,13 +4,13 @@ include mixins/reviewCard
 
 block content
   .container.singleevent
+    h5.event-name #{event.title}
     h5 #{date} #{time} #{event.foodtype} #{event.price} €
     .row.event-row
       .eight.columns
         img.eventimg(src=event.image.path)
       .four.columns.attendevent
         aside.eventdetails
-          h5.event-name #{event.title}
           h5.event-host Host: #{ownerFullname}
           if event.isPastEvent
             p.past-notice This event is in the past!

@@ -4,7 +4,7 @@ mixin eventCard(event = {})
       img(src=event.image.path)
     .event-card-info
       p.event-title #{event.title}
-      p #{event.foodtype} food
+      p #{event.foodtype}
       p #{event.price} €
       p #{event.placesLeft} places left
       a(href='/event/'+event._id) Event details

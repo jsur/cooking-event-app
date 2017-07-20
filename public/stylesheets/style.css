@@ -75,6 +75,7 @@ button {
 
 .frontpage-section-1 {
   text-align: center;
+  background-image: url('')
 }
 
 .frontpage-button {
@@ -310,10 +311,6 @@ button {
 
 /* Review styles */
 
-.review-description {
-  width: 100%;
-}
-
 .review-form {
   display: flex;
   flex-direction: column;
@@ -324,10 +321,6 @@ button {
 }
 
 .review-rating-label {
-  margin-left: 10px;
-}
-
-.review-save {
   margin-left: 10px;
 }
 
@@ -349,7 +342,6 @@ button {
 }
 
 .review-p-description {
-  width: 100%;
   margin: 0;
 }
 
@@ -384,8 +376,8 @@ button {
     overflow: hidden;
     display: inline-block;
   }
-}
 
+}
 
 
 /* Larger than phablet */
@@ -494,7 +486,6 @@ button {
     overflow: hidden;
     display: inline-block;
   }
-}
 
   .mainpage-img-container img {
     float: left;
@@ -509,6 +500,7 @@ button {
   .mainpage-img-container {
     margin-left: 20px;
   }
+
 }
 
 /* Larger than desktop */
@@ -525,6 +517,10 @@ button {
 
   .reviewcard {
     width: 70%;
+  }
+
+  .review-save {
+    margin-left: 10px;
   }
 }
 

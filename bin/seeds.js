@@ -223,7 +223,7 @@ const events = [
   },
   {
     'owner': ['5968cb361ef39b7f80931bda'],
-    'title': 'Restaurant in Cairo, Egypt',
+    'title': 'Restaurant in Cairo',
     'foodtype': ['Egyptian'],
     'price': 120,
     'capacity': 9,
