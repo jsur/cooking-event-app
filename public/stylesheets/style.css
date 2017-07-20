@@ -114,34 +114,40 @@ nav li:last-of-type {
 
 .eventcard {
   min-width: 25%;
-  border: 1px solid grey;
+  border: solid 2px #937b57;
   width: 450px;
   height: 150px;
   margin: 1rem;
-  padding: 10px;
+  padding: 5px;
   box-sizing: border-box;
-}
-
-.event-card-image {
-  width: 100px;
-  height: 130px;
-  background-color: pink;
-  float: left;
   position: relative;
 }
 
 .event-card-info {
-  width: 100px;
-  position: absolute;
+  width: 230px;
+  position: relative;
+  float: right;
+  font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+  margin-right: 0px;
+	color: black;
+  display: inline-block;
 }
 
 .event-title {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #937b57;
 }
 
+.event-card-image {
+  display: none;
+}
+
+.event-card-image img {
+  display: none;
+}
 
 .eventcard p {
   margin: 0;
@@ -269,7 +275,25 @@ nav li:last-of-type {
   .frontpage-button {
     margin-top: 2rem;
   }
+  .event-card-image {
+    width: 120px;
+    height: 80px;
+    float: left;
+    margin-top: 20px;
+    position: absolute;
+    display: block;
+  }
+
+  .event-card-image img {
+    width: 120px;
+    height: 80px;
+    margin-top: 10px;
+    overflow: hidden;
+    display: block;
+  }
 }
+
+
 
 /* Larger than phablet */
 @media (min-width: 550px) {
@@ -320,6 +344,23 @@ nav li:last-of-type {
     width: 100%;
   }
 
+  .event-card-image {
+    width: 200px;
+    height: 135px;
+    background-color: pink;
+    float: left;
+    margin-top: 0px;
+    position: absolute;
+    display: block;
+  }
+
+  .event-card-image img {
+    width: 200px;
+    height: 135px;
+    margin-top: 0px;
+    overflow: hidden;
+    display: block;
+  }
 }
 
 /* Larger than tablet */
@@ -335,13 +376,30 @@ nav li:last-of-type {
     flex-direction: column;
   }
   .map {
-    width: 60%;
+    width: 50%;
   }
+
   .eventcard-container.map-page {
-    width: 40%;
+    width: 50%;
   }
   .eventimg {
     height: 500px;
+  }
+  .event-card-image {
+    width: 120px;
+    height: 80px;
+    float: left;
+    margin-top: 20px;
+    position: absolute;
+    display: block;
+  }
+
+  .event-card-image img {
+    width: 120px;
+    height: 80px;
+    margin-top: 10px;
+    overflow: hidden;
+    display: block;
   }
 }
 
