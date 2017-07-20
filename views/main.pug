@@ -4,11 +4,11 @@ include mixins/eventCard
 
 block content
   section.frontpage-section-1
-    h1 Generic Cooking App Name
-    p Enjoy delicious food made by local chefs
-    p Share your own cooking and make $$$
+    .mainpage-img-container
+      img.main-page-img(src="/img/logo.png")
+    p.main-page-p Enjoy delicious food made by local chefs at their home
     form(action="/search")
-      button.button-primary.frontpage-button All events
+      button.frontpage-button All events
   .container.frontpage-container-1
     .row
       .twelve.columns.eventcard-container-main
