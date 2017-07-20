@@ -2,9 +2,9 @@ mixin eventCard(event = {})
   .eventcard
     .event-card-image
       img(src=event.image.path)
-    .event-card.info
-      p Name: #{event.title}
-      p Food type: #{event.foodtype}
-      p Price: #{event.price} €
+    .event-card-info
+      p.event-title #{event.title}
+      p #{event.foodtype} food
+      p #{event.price} €
+      p #{event.placesLeft} places left
       a(href='/event/'+event._id) Event details
-      p Places left: #{event.placesLeft}
