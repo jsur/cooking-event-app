@@ -39,24 +39,49 @@ button {
   display: none;
 }
 
-.header-h2 {
-  color: red;
+<<<<<<< HEAD
+=======
+.mainpage-img-container {
+  width: 100%;
+  height: 70px;
+  display: block;
 }
 
-.username-p {
-  color: green;
+.main-page-img {
+  margin: 0 auto;
+  width: 170px;
+  height: 70px;
+  display: block;
 }
 
-.columns {
-  word-wrap: break-word;
+.main-page-p {
+  display: block;
+  margin-top: 20px;
 }
 
-.frontpage-section-1 {
-  text-align: center;
+.frontpage-new-events {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
 }
 
 .frontpage-button {
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/img/mainimg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40vh;
+}
+
+.frontpage-button {
+  background-color: #937b57;
+  color: black;
 }
 
 #mapevents,
@@ -296,9 +321,7 @@ button {
   nav li {
     margin: 15px;
   }
-  .frontpage-button {
-    margin-top: 2rem;
-  }
+
   .event-card-image {
     width: 120px;
     height: 80px;
