@@ -1,5 +1,6 @@
 const Event = require('../models/Event');
 const User = require('../models/User');
+const Review = require('../models/Review');
 const moment = require('moment');
 const multer = require('multer');
 const upload = multer({ 'dest': './public/uploads' });
@@ -61,6 +62,8 @@ exports.getEventWithId = async (req, res, next) => {
   let userIsAttending = false;
   let userIsOwner = false;
 
+  const reviews = await Review.find().where('host').equals(event.owner[0]);
+
   // We also need to know if a logged in user is already attending
   if (res.locals.isUserLoggedIn) {
     userIsAttending = event.attendees.some((person) => {
@@ -75,7 +78,7 @@ exports.getEventWithId = async (req, res, next) => {
     });
   }
 
-  res.render('event', { event, date, time, userIsAttending, userIsOwner });
+  res.render('event', { event, date, time, userIsAttending, userIsOwner, reviews });
 };
 
 exports.attendEvent = async (req, res, next) => {
@@ -101,8 +104,6 @@ exports.getEvent = async (req, res, next) => {
   const event = await Event.findById(req.params.id);
   const day = event.date.toISOString().substring(0, 10);
   const time = event.date.toISOString().substring(11, 19);
-  console.log(event.date);
-  console.log(time);
 
   res.render('editevent', { event, day, time });
 };
