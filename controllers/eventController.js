@@ -126,6 +126,12 @@ exports.editEvent = async (req, res, next) => {
   }
 };
 
+exports.deleteEvent = async (req, res, next) => {
+  const deletedEvent = await Event.findByIdAndRemove(req.params.id);
+  req.flash('success', `${deletedEvent.title} has been deleted.`);
+  res.redirect('/dashboard');
+};
+
 exports.makeNewEvent = async (req, res, next) => {
 
   const latitude = req.body.latitude;

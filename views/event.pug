@@ -23,9 +23,10 @@ block content
               button.button-attending I'm attending!
             if userIsAttending
               button.button-cancel Cancel attendance
-          form.form-attending(action='/editevent/'+event._id method='GET')
             if userIsOwner
+          form.form-attending(action='/editevent/'+event._id method='GET')
               button.button-edit Edit this event
+          form.form-attending(action='/editevent/'+event._id+'/delete' method='POST')
               button.button-delete Cancel this event
           button.button-eventdescription Read description 👇
           p.p-eventdescription= event.description

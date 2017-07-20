@@ -40,6 +40,7 @@ router.post('/profile', authController.checkAuth, upload.single('image'), catchE
 
 router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEvent));
 router.post('/editevent/:id', authController.checkAuth, catchErrors(eventController.editEvent));
+router.post('/editevent/:id/delete', authController.checkAuth, catchErrors(eventController.deleteEvent));
 
 router.get('/logout', (req, res) => {
   req.logout();
