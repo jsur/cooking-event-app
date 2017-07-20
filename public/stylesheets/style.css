@@ -322,6 +322,9 @@ button {
   max-width: 960px;
 }
 
+.updateeventimg {
+  width: 50%;
+
 /* Review styles */
 
 .review-form {
@@ -352,6 +355,7 @@ button {
 
 .review-p-rating {
   font-weight: bold;
+>>>>>>> a6c5410552f8b14dd006e91bdc5aed22edfb5b87
 }
 
 .review-p-description {
