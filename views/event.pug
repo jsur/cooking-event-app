@@ -12,7 +12,7 @@ block content
         img.eventimg(src=event.image.path)
       .four.columns.attendevent
         aside.eventdetails
-          h3= event.title
+          h4 Host: #{ownerFullname}
           if event.isPastEvent
             p.past-notice This event is in the past!
           if userIsAttending && !event.isPastEvent

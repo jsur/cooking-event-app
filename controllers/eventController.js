@@ -62,6 +62,9 @@ exports.getEventWithId = async (req, res, next) => {
   let userIsAttending = false;
   let userIsOwner = false;
 
+  const owner = await User.find({ '_id': event.owner });
+  const ownerFullname = `${owner.length > 0 ? owner[0].firstname : 'User does not have a name!'} ${owner.length > 0 ? owner[0].lastname : ''}`;
+
   const reviews = await Review.find().where('host').equals(event.owner[0]);
 
   // We also need to know if a logged in user is already attending
@@ -78,7 +81,7 @@ exports.getEventWithId = async (req, res, next) => {
     });
   }
 
-  res.render('event', { event, date, time, userIsAttending, userIsOwner, reviews });
+  res.render('event', { event, date, time, userIsAttending, userIsOwner, reviews, ownerFullname});
 };
 
 exports.attendEvent = async (req, res, next) => {
@@ -99,11 +102,11 @@ exports.attendEvent = async (req, res, next) => {
   }
 };
 
-exports.getEvent = async (req, res, next) => {
+exports.getEditableEvent = async (req, res, next) => {
 
   const event = await Event.findById(req.params.id);
-  const day = event.date.toISOString().substring(0, 10);
-  const time = event.date.toISOString().substring(11, 19);
+  const day = moment(event.date).format('YYYY-MM-DD');
+  const time = moment(event.date).format('HH:mm');
 
   res.render('editevent', { event, day, time });
 };
@@ -121,7 +124,7 @@ exports.editEvent = async (req, res, next) => {
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
-  console.log(eventInfo);
+
   const updatedEvent = await Event.findByIdAndUpdate(req.params.id, eventInfo);
 
   if (updatedEvent.capacity < updatedEvent.attendees.length) {

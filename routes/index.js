@@ -39,7 +39,7 @@ router.post('/signup', authController.validateSignUpInfo, catchErrors(authContro
 router.get('/profile', authController.checkAuth, catchErrors(userController.getUser));
 router.post('/profile', authController.checkAuth, upload.single('image'), catchErrors(userController.updateUser));
 
-router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEvent));
+router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEditableEvent));
 router.post('/editevent/:id', authController.checkAuth, catchErrors(eventController.editEvent));
 router.post('/editevent/:id/delete', authController.checkAuth, catchErrors(eventController.deleteEvent));
 

@@ -19,6 +19,6 @@ block content
           label(for="location") Location
           input(id="location" type="text" name="location" value= event.address : '' required)
           input(id="address" type="text" name="address" value= event.address : '' hidden)
-          input(id="latitude" type="text" name="latitude" value= event.latitude : '' hidden)
-          input(id="longitude" type="text" name="longitude" value= event.longitude : '' hidden)
+          input(id="latitude" type="text" name="latitude" value= event.location.coordinates[1] : '' hidden)
+          input(id="longitude" type="text" name="longitude" value= event.location.coordinates[0] : '' hidden)
           button.button-primary.button-signup Update event
