@@ -13,7 +13,9 @@ block content
           label(for="description") Description
           input(type="text" name="description" placeholder="Tell us a bit more..." value= event.description : '')
           label(for="date") Date
-          input(type="date" name="date" value= event.date : '' required)
+          input(type="date" name="day" value= day required)
+          label(for="time") Date
+          input(type="time" name="time" value= time : '' required)
           label(for="location") Location
           input(id="location" type="text" name="location" value= event.address : '' required)
           input(id="address" type="text" name="address" value= event.address : '' hidden)

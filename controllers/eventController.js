@@ -97,8 +97,14 @@ exports.attendEvent = async (req, res, next) => {
 };
 
 exports.getEvent = async (req, res, next) => {
+
   const event = await Event.findById(req.params.id);
-  res.render('editevent', { event });
+  const day = event.date.toISOString().substring(0, 10);
+  const time = event.date.toISOString().substring(11, 19);
+  console.log(event.date);
+  console.log(time);
+
+  res.render('editevent', { event, day, time });
 };
 
 exports.editEvent = async (req, res, next) => {
@@ -109,12 +115,12 @@ exports.editEvent = async (req, res, next) => {
   const eventInfo = {
     'title': req.body.title,
     'capacity': req.body.capacity,
-    'date': req.body.date,
+    'date': req.body.day + ' ' + req.body.time,
     'description': req.body.description,
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]}
   };
-
+  console.log(eventInfo);
   const updatedEvent = await Event.findByIdAndUpdate(req.params.id, eventInfo);
 
   if (updatedEvent.capacity < updatedEvent.attendees.length) {
