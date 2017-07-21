@@ -322,6 +322,7 @@ button {
 	font-weight: bold;
 	letter-spacing: 0.5px;
 	color: #000000;
+  margin-left: 150px;
 }
 
 .container.dashboard h3 {
@@ -352,6 +353,20 @@ button {
 }
 
 .upcoming-hosting {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+
+.past-attended {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+.past-hosted {
   width: 45%;
   display: flex;
   flex-direction: column;
@@ -394,6 +409,23 @@ button {
   width: 50%;
 }
 
+/* PROFILE */
+
+.profile-header-h2 {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Open Sans' sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	color: #000000;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.update-profile-form {
+  font-family: 'Open Sans' sans-serif;
+}
 
 
 /* Mobile first queries */
