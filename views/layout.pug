@@ -3,12 +3,12 @@ html
   head
     title Yummy
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    link(rel='stylesheet', href='/lib/skeleton/normalize.css')
-    link(rel='stylesheet', href='/lib/skeleton/skeleton.css')
     link(rel='stylesheet', href='/lib/nouislider/nouislider.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/flashes.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:300,600,700,800')
+    link(rel='stylesheet', href='/lib/skeleton/normalize.css')
+    link(rel='stylesheet', href='/lib/skeleton/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
   body
     header
       nav
@@ -34,7 +34,7 @@ html
         each category in categories
           each message in flashes[category]
             .flash(class=`flash--${category}`)
-              p.flash__text!= message
+              p.flash__text= message
               button.flash__remove(onClick="this.parentElement.remove()") &times;
     block content
     script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD5ntBqVPjV3yyQueoAvdPbNYJAEnSPq4&libraries=places")
