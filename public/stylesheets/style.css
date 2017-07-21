@@ -17,7 +17,7 @@ nav {
 
 nav li {
   display: inline;
-  margin: 10px;
+  margin: 7.5px;
   float: left;
   font-size: 1.2rem;
 	font-weight: 600;
@@ -45,9 +45,9 @@ button {
   width: 28px;
 }
 
-.newevent-main-li {
+/* .newevent-main-li {
   display: none;
-}
+} */
 
 .mainpage-img-container {
   width: 100%;
