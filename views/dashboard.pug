@@ -6,14 +6,14 @@ block content
   .container.profile
     .row
       .twelve.columns
-        h2 Edit profile information
+        h2.update-profile-header Edit profile information
         form.update-profile-form(action='/profile' method='POST' enctype="multipart/form-data")
           label(for="email") Email
-          input.update-profile-form-input(type="text" name="email" placeholder="Email" value= user.email)
+          input(type="text" name="email" placeholder="Email" value= user.email)
           label(for="firstname") First name
-          input.update-profile-form-input(type="text" name="firstname" placeholder="First name" value= user.firstname)
+          input(type="text" name="firstname" placeholder="First name" value= user.firstname)
           label(for="lastname") Last name
-          input.update-profile-form-input(type="text" name="lastname" placeholder="Last name" value= user.lastname)
+          input(type="text" name="lastname" placeholder="Last name" value= user.lastname)
           button.button-primary.button-save Save
   .dashboard-header
     h2 Your events

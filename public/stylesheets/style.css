@@ -326,7 +326,7 @@ button {
 	font-weight: semi-bold;
 	letter-spacing: 0.7px;
 	color: #000000;
-  margin-left: 150px;
+  margin-left: 50px;
 }
 
 .container.dashboard h3 {
@@ -337,12 +337,13 @@ button {
 }
 
 .dashboard,
-.profile,
 .login,
 .newevent,
 .singleevent {
   height: 100vh;
 }
+
+
 
 .container.dashboard {
   display: flex;
@@ -426,8 +427,8 @@ button {
   margin-top: 50px;
 }
 
-.update-profile-form {
-  font-family: 'Open Sans' sans-serif;
+.update-profile-header {
+  margin-top: 20px;
 }
 
 
