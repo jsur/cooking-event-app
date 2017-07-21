@@ -3,6 +3,7 @@ html
   head
     title Yummy
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="icon" type="image/png" href="../img/chefhat.png")
     link(rel='stylesheet', href='/lib/nouislider/nouislider.min.css')
     link(rel='stylesheet', href='/stylesheets/flashes.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans:300,600,700,800')
@@ -13,7 +14,8 @@ html
     header
       nav
         li
-          a(href="/") Home
+          a(href="/")
+            img.nav-home(src="../img/chefhat.png")
         li
           a(href="/search") Events
         if isUserLoggedIn
