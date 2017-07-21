@@ -24,8 +24,10 @@ exports.getDashboard = async (req, res, next) => {
   // Host
   const upcomingEventsHosted = await Event.find({ 'owner': { '$in': [req.user.id] } }).where('date').gt(moment());
   const hostedEvents = await Event.find({ 'owner': { '$in': [req.user.id] } }).where('date').lt(moment());
+// User
+  const user = await User.findById(req.user.id);
 
-  res.render('dashboard', { attendedEvents, upcomingEvents, upcomingEventsHosted, hostedEvents });
+  res.render('dashboard', { attendedEvents, upcomingEvents, upcomingEventsHosted, hostedEvents, user });
 };
 
 exports.getNewEventPage = async (req, res, next) => {

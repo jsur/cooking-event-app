@@ -21,6 +21,7 @@ block content
         input(id="update-description" type="text" name="description" placeholder="Tell us a bit more..." value= event.description : '')
         img.updateeventimg(src=event.image.path)
         input(type="file" name="image" value= event ? event.image.path : '')
+        input(id="imagename" type="text" name="imagename" value= event.image.name : '' hidden)
         input(id="address" type="text" name="address" value= event.address : '' hidden)
         input(id="latitude" type="text" name="latitude" value= event.location.coordinates[1] : '' hidden)
         input(id="longitude" type="text" name="longitude" value= event.location.coordinates[0] : '' hidden)
