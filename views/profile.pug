@@ -4,13 +4,13 @@ block content
   .container.profile
     .row
       .twelve.columns
-        h2 Edit profile information
-        form(action='/profile' method='POST' enctype="multipart/form-data")
+        h2.profile-header-h2 Edit profile information
+        form.update-profile-form(action='/profile' method='POST' enctype="multipart/form-data")
           label(for="email") Email
-          input(type="text" name="email" placeholder="Email" value= user.email)
+          input.update-profile-form-input(type="text" name="email" placeholder="Email" value= user.email)
           label(for="firstname") First name
-          input(type="text" name="firstname" placeholder="First name" value= user.firstname)
+          input.update-profile-form-input(type="text" name="firstname" placeholder="First name" value= user.firstname)
           label(for="lastname") Last name
-          input(type="text" name="lastname" placeholder="Last name" value= user.lastname)
+          input.update-profile-form-input(type="text" name="lastname" placeholder="Last name" value= user.lastname)
           input(type="file" name="image" required)
           button.button-primary.button-save Save
