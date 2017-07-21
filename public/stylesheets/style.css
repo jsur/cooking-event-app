@@ -210,6 +210,14 @@ button {
 	color: #937b57;
 }
 
+.event-page-name {
+  margin-top: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	font-weight: 600;
+  color: #107175;
+}
+
 .event-card-image {
   display: none;
 }
@@ -380,6 +388,8 @@ button {
 .event-host {
   margin: 0;
 }
+
+.event-name
 
 .placesleft {
   color: #107175;
