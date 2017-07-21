@@ -22,6 +22,12 @@
   border: 0;
   font-size: 26px;
   font-weight: bold;
+  color: black;
+}
+
+.flash__remove:hover {
+  background-color: white;
+  color: gray;
 }
 
 .flash:after {
