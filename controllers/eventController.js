@@ -123,8 +123,23 @@ exports.editEvent = async (req, res, next) => {
     'description': req.body.description,
     'address': req.body.address,
     'location': {'type': 'Point', 'coordinates': [longitude, latitude]},
-    'image': {'name': req.file.filename, 'path': `/uploads/${req.file.filename}`}
+    'image': {'name': '', 'path': ''}
   };
+
+  if (req.file === undefined) {
+
+    // hack hack
+    const event = await Event.findById(req.params.id);
+
+    eventInfo.image.path = event.image.path;
+    eventInfo.image.name = event.image.name;
+
+  } else {
+
+    eventInfo.image.path = `/uploads/${req.file.filename}`;
+    eventInfo.image.name = req.file.filename;
+
+  }
 
   const updatedEvent = await Event.findByIdAndUpdate(req.params.id, eventInfo);
 
