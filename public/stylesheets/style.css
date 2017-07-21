@@ -40,8 +40,9 @@ button {
   border-radius: 0;
 }
 
-#inputstyle {
-  border: none;
+.nav-home {
+  height: 28px;
+  width: 28px;
 }
 
 .newevent-main-li {
