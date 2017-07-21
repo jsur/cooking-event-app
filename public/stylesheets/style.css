@@ -70,12 +70,9 @@ button {
   color: #937b57;
 }
 
-.frontpage-new-events {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  margin-top: 10px;
+.frontpage-header-container {
+  text-align: center;
+  margin-top: 5px;
 }
 
 .frontpage-section-1 {
@@ -94,16 +91,6 @@ button {
 }
 
 /* SEARCH PAGE */
-
-.search-title {
-  font-family: 'Open Sans', sans-serif;
-	font-size: 30px;
-	font-weight: bold;
-	letter-spacing: 0.5px;
-	color: #000000;
-  margin-left: 20px;
-  margin-top: 15px;
-}
 
 .search-container {
   border-top: solid 1px #107175;
