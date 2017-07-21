@@ -40,6 +40,10 @@ button {
   border-radius: 0;
 }
 
+#inputstyle {
+  border: none;
+}
+
 .newevent-main-li {
   display: none;
 }
@@ -86,7 +90,6 @@ button {
 }
 
 .frontpage-button {
-  background-color: #937b57;
   color: black;
 }
 
