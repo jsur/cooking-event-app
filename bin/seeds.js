@@ -92,7 +92,7 @@ const events = [
     'date': '2017-07-23 21:00:00',
     'image': {
       'name': 'club-lola',
-      'path': '/uploads/pizza-night.jpg'
+      'path': '/uploads/club-lola.jpg'
     }
   },
   {
@@ -218,7 +218,7 @@ const events = [
     'date': '2017-09-03 21:00:00',
     'image': {
       'name': 'spices-of-india',
-      'path': '/uploads/spices-of-india.png'
+      'path': '/uploads/spices-of-india.jpg'
     }
   },
   {
