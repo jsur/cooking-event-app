@@ -34,7 +34,7 @@ html
         each category in categories
           each message in flashes[category]
             .flash(class=`flash--${category}`)
-              p.flash__text!= message
+              p.flash__text= message
               button.flash__remove(onClick="this.parentElement.remove()") &times;
     block content
     script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD5ntBqVPjV3yyQueoAvdPbNYJAEnSPq4&libraries=places")
