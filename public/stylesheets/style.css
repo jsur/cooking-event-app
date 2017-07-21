@@ -97,6 +97,10 @@ button {
   border-top: solid 1px #107175;
 }
 
+.search-header {
+  margin-left: 30px;
+}
+
 #mapevents,
 .eventcard-container-main {
   display: flex;
@@ -241,8 +245,7 @@ button {
 }
 
 .button-events {
-  margin-left: 50px;
-  margin-top: 10px;
+  position: relative;
 }
 
 .staticmap {
@@ -303,7 +306,8 @@ button {
 .dashboard-header {
   display: flex;
   flex-direction: row;
-  padding-top: 50px;
+  padding-top: 20px;
+  margin-left: 100px;
 }
 
 .dashboard-header h2 {
@@ -313,7 +317,7 @@ button {
 	font-weight: semi-bold;
 	letter-spacing: 0.7px;
 	color: #000000;
-  margin-left: 50px;
+
 }
 
 .container.dashboard h3 {
@@ -323,7 +327,6 @@ button {
 	color: #107175;
 }
 
-.dashboard,
 .login,
 .newevent,
 .singleevent {
@@ -349,6 +352,10 @@ button {
   display: flex;
   flex-direction: column;
   float: right;
+}
+
+.past-container {
+  display: block;
 }
 
 .past-attended {
@@ -414,8 +421,8 @@ button {
   margin-top: 50px;
 }
 
-.update-profile-header {
-  margin-top: 20px;
+.update-profile-header, {
+  margin-top: 100px;
 }
 
 

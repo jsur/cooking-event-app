@@ -3,23 +3,11 @@ extends layout
 include mixins/eventCard
 
 block content
-  .container.profile
-    .row
-      .twelve.columns
-        h2.update-profile-header Edit profile information
-        form.update-profile-form(action='/profile' method='POST' enctype="multipart/form-data")
-          label(for="email") Email
-          input(type="text" name="email" placeholder="Email" value= user.email)
-          label(for="firstname") First name
-          input(type="text" name="firstname" placeholder="First name" value= user.firstname)
-          label(for="lastname") Last name
-          input(type="text" name="lastname" placeholder="Last name" value= user.lastname)
-          button.button-primary.button-save Save
-  .dashboard-header
-    h2 Your events
-    form(action="/search")
-      button.button-primary.button-events Browse all events
   .container.dashboard
+    .twelve.columns
+      h2.update-profile-header Your events
+      form(action="/search")
+        button.button-primary.button-events Browse all events
     .upcoming-container
       div.upcoming-attending
         h3 Upcoming events you are attending
@@ -43,3 +31,16 @@ block content
         if hostedEvents
           each event in hostedEvents
             +eventCard(event)
+  .container.profile
+    .row
+      .twelve.columns
+        h2.update-profile-header Edit profile information
+        form.update-profile-form(action='/profile' method='POST' enctype="multipart/form-data")
+          label(for="email") Email
+          input(type="text" name="email" placeholder="Email" value= user.email)
+          label(for="firstname") First name
+          input(type="text" name="firstname" placeholder="First name" value= user.firstname)
+          label(for="lastname") Last name
+          input(type="text" name="lastname" placeholder="Last name" value= user.lastname)
+          button.button-primary.button-save Save
+    .row
