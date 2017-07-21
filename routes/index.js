@@ -18,6 +18,7 @@ router.get('/', catchErrors(eventController.getMainPage));
 router.get('/search', catchErrors(eventController.getSearchPage));
 
 router.get('/dashboard', authController.checkAuth, catchErrors(eventController.getDashboard));
+router.post('/dashboard', authController.checkAuth, upload.single('image'), catchErrors(userController.updateUser));
 
 router.get('/newevent', authController.checkAuth, catchErrors(eventController.getNewEventPage));
 router.post('/newevent', upload.single('image'), authController.checkAuth, catchErrors(eventController.makeNewEvent));
@@ -36,7 +37,6 @@ router.post('/event/:id', authController.checkAuth, catchErrors(eventController.
 
 router.post('/signup', authController.validateSignUpInfo, catchErrors(authController.makeNewUser));
 
-router.get('/profile', authController.checkAuth, catchErrors(userController.getUser));
 router.post('/profile', authController.checkAuth, upload.single('image'), catchErrors(userController.updateUser));
 
 router.get('/editevent/:id', authController.checkAuth, catchErrors(eventController.getEditableEvent));
